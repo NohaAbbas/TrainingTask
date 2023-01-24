@@ -16,6 +16,8 @@
 		BB68473E297FE32D00145344 /* TrainingTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68473D297FE32D00145344 /* TrainingTaskTests.swift */; };
 		BB684748297FE32D00145344 /* TrainingTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684747297FE32D00145344 /* TrainingTaskUITests.swift */; };
 		BB68474A297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684749297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift */; };
+		BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */; };
+		BBDF9F0F297FFD1E00BEF26B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		BB684743297FE32D00145344 /* TrainingTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB684747297FE32D00145344 /* TrainingTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskUITests.swift; sourceTree = "<group>"; };
 		BB684749297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
+		BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,13 @@
 		BB684725297FE32900145344 /* TrainingTask */ = {
 			isa = PBXGroup;
 			children = (
+				BB68475D297FFBCA00145344 /* customViews */,
+				BB684756297FE5F500145344 /* protocols */,
+				BB684758297FE62700145344 /* view */,
+				BB68475B297FE64500145344 /* interactor */,
+				BB684759297FE62E00145344 /* presenter */,
+				BB684757297FE61C00145344 /* entity */,
+				BB68475A297FE63600145344 /* router */,
 				BB684726297FE32900145344 /* AppDelegate.swift */,
 				BB684728297FE32900145344 /* SceneDelegate.swift */,
 				BB68472A297FE32900145344 /* ViewController.swift */,
@@ -125,6 +136,65 @@
 				BB684749297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift */,
 			);
 			path = TrainingTaskUITests;
+			sourceTree = "<group>";
+		};
+		BB684756297FE5F500145344 /* protocols */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = protocols;
+			sourceTree = "<group>";
+		};
+		BB684757297FE61C00145344 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		BB684758297FE62700145344 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB684759297FE62E00145344 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BB68475A297FE63600145344 /* router */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		BB68475B297FE64500145344 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		BB68475D297FFBCA00145344 /* customViews */ = {
+			isa = PBXGroup;
+			children = (
+				BB684760297FFC6D00145344 /* customNavBar */,
+			);
+			path = customViews;
+			sourceTree = "<group>";
+		};
+		BB684760297FFC6D00145344 /* customNavBar */ = {
+			isa = PBXGroup;
+			children = (
+				BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */,
+				BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */,
+			);
+			path = customNavBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */,
 				BB684733297FE32C00145344 /* LaunchScreen.storyboard in Resources */,
 				BB684730297FE32C00145344 /* Assets.xcassets in Resources */,
 				BB68472E297FE32900145344 /* Main.storyboard in Resources */,
@@ -258,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBDF9F0F297FFD1E00BEF26B /* CustomNavigationBar.swift in Sources */,
 				BB68472B297FE32900145344 /* ViewController.swift in Sources */,
 				BB684727297FE32900145344 /* AppDelegate.swift in Sources */,
 				BB684729297FE32900145344 /* SceneDelegate.swift in Sources */,
@@ -444,6 +516,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -451,6 +524,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tr.TrainingTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -471,6 +547,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -478,6 +555,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tr.TrainingTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

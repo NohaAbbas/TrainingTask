@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomNavigationBar" customModule="TrainingTask" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomNavigationBar" customModule="TrainingTask" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="990" height="170"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCh-YM-zTY">
+                    <rect key="frame" x="8" y="55" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="GuX-oz-qrQ"/>
+                        <constraint firstAttribute="width" secondItem="wCh-YM-zTY" secondAttribute="height" multiplier="1:1" id="pKo-Bd-8q0"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="line.3.horizontal" catalog="system" title=" ">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="am6-xt-oUm">
+                    <rect key="frame" x="828.66666666666663" y="65" width="85.333333333333371" height="40.333333333333343"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Arabic">
+                        <fontDescription key="titleFontDescription" type="system" pointSize="22"/>
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8uV-84-d7T">
+                    <rect key="frame" x="922" y="55" width="60" height="60"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="MMz-mO-ezh"/>
+                        <constraint firstAttribute="width" secondItem="8uV-84-d7T" secondAttribute="height" multiplier="1:1" id="hDH-GA-Rol"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="magnifyingglass" catalog="system" title=" ">
+                        <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </buttonConfiguration>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="wCh-YM-zTY" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="B7e-HW-HHP"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="8uV-84-d7T" secondAttribute="trailing" constant="8" id="BsO-XR-4l7"/>
+                <constraint firstItem="8uV-84-d7T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="HRE-yl-AHS"/>
+                <constraint firstItem="wCh-YM-zTY" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="LzI-wQ-7lf"/>
+                <constraint firstItem="am6-xt-oUm" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="dRN-Ta-mtv"/>
+                <constraint firstItem="8uV-84-d7T" firstAttribute="leading" secondItem="am6-xt-oUm" secondAttribute="trailing" constant="8" id="nGa-r3-akR"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="languageButton" destination="am6-xt-oUm" id="BEd-lR-Ipz"/>
+                <outlet property="menuBar" destination="wCh-YM-zTY" id="qQI-AV-YCW"/>
+                <outlet property="searchButton" destination="8uV-84-d7T" id="eEB-Ja-BDG"/>
+            </connections>
+            <point key="canvasLocation" x="-169.46564885496181" y="-251.40845070422537"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="line.3.horizontal" catalog="system" width="128" height="65"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+    </resources>
+</document>

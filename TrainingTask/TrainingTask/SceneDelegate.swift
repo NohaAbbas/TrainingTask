@@ -17,6 +17,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        var navController = window?.rootViewController as? UINavigationController
+        var customNavBar = CustomNavigationBar(frame: CGRect(x: 0, y: (navController?.navigationBar.frame.height)! + 20, width: UIScreen.main.bounds.width, height: 40))
+        
+        customNavBar.translatesAutoresizingMaskIntoConstraints = false
+
+        navController?.view.addSubview(customNavBar)
+        
+        NSLayoutConstraint.activate([
+            customNavBar.leadingAnchor.constraint(equalTo: (navController?.view!.leadingAnchor)!),
+            customNavBar.trailingAnchor.constraint(equalTo: (navController?.view!.trailingAnchor)!),
+            customNavBar.topAnchor.constraint(equalTo: (navController?.view!.topAnchor)!),
+            customNavBar.heightAnchor.constraint(equalToConstant: 200)
+              ])
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
