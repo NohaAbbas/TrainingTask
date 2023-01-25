@@ -18,6 +18,7 @@ class CustomNavigationBar: UIView {
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+        addElevation()
     }
 
     override init(frame: CGRect) {
@@ -25,6 +26,14 @@ class CustomNavigationBar: UIView {
         let view = Bundle.main.loadNibNamed("CustomNavigationBar", owner: self)?.first as? UIView
         view?.frame = bounds
         addSubview(view!)
+        addElevation()
+    }
+    
+    func addElevation() {
+        layer.masksToBounds = false
+        layer.shadowRadius = 2
+        layer.shadowOpacity = 2
+        layer.shadowColor = UIColor.gray.cgColor
     }
     
 }

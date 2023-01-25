@@ -28,7 +28,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             customNavBar.leadingAnchor.constraint(equalTo: (navController?.view!.leadingAnchor)!),
             customNavBar.trailingAnchor.constraint(equalTo: (navController?.view!.trailingAnchor)!),
             customNavBar.topAnchor.constraint(equalTo: (navController?.view!.topAnchor)!),
-            customNavBar.heightAnchor.constraint(equalToConstant: 200)
+            customNavBar.heightAnchor.constraint(equalToConstant: 100)
               ])
     }
 
