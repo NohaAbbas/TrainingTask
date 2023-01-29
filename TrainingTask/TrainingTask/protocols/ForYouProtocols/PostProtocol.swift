@@ -14,6 +14,7 @@ protocol ForYouViewToPresenterProtocol: AnyObject {
     var router: ForYouPresenterToRouterProtocol? { get set }
     
     func startFetchingPosts(of category: Int)
+    func showPostDetailsViewController(navigationController: UINavigationController, navBar: CustomNavigationBar)
 }
 
 protocol ForYouPresenterToViewProtocol: AnyObject {
@@ -21,8 +22,10 @@ protocol ForYouPresenterToViewProtocol: AnyObject {
     func showError()
 }
 
-protocol ForYouPresenterToRouterProtocol: AnyObject {
+protocol ForYouPresenterToRouterProtocol {
     static func createModule() -> UITabBarController
+    static func createForYouScreen() -> ForYouViewController
+    func navigateToPostDetailsScreen(navigationController navigationController: UINavigationController, navBar navBar: CustomNavigationBar)
 }
 
 protocol ForYouPresenterToInteractorProtocol: AnyObject {

@@ -11,11 +11,11 @@ import UIKit
 class PostsRouter : ForYouPresenterToRouterProtocol {
     static func createModule() -> UITabBarController {
         let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
-        view.viewControllers = [createForYou()]
+        view.viewControllers = [createForYouScreen()]
         return view
     }
     
-    static func createForYou() -> ForYouViewController{
+    static func createForYouScreen() -> ForYouViewController{
         let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "ForYouViewController") as! ForYouViewController
         
         let presenter = PostsPresenter()
@@ -29,6 +29,14 @@ class PostsRouter : ForYouPresenterToRouterProtocol {
         interactor.presenter = presenter
         
         return view
+    }
+    
+    func navigateToPostDetailsScreen(navigationController navigationController: UINavigationController, navBar navBar: CustomNavigationBar) {
+        let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "PostDetailsViewController") as! PostDetailsViewController
+        view.customNavBar = navBar
+        navBar.navigate()
+        
+        navigationController.pushViewController(view, animated: true)
     }
     
 }

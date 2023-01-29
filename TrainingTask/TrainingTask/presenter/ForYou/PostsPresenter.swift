@@ -5,7 +5,7 @@
 //  Created by SoftXpert on 1/25/23.
 //
 
-import Foundation
+import UIKit
 
 
 class PostsPresenter : ForYouViewToPresenterProtocol {
@@ -15,6 +15,10 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
     
     func startFetchingPosts(of category: Int) {
         interactor?.fetchPosts(of: category)
+    }
+    
+    func showPostDetailsViewController(navigationController: UINavigationController, navBar: CustomNavigationBar) {
+        router?.navigateToPostDetailsScreen(navigationController: navigationController, navBar: navBar)
     }
     
 }

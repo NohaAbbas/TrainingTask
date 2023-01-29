@@ -97,13 +97,10 @@ extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let detailsVC = storyboard?.instantiateViewController(withIdentifier: "PostDetailsViewController") as! PostDetailsViewController
         if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate {
             sceneDelegate.customNavBar?.navigate()
-            detailsVC.customNavBar = sceneDelegate.customNavBar
+            presenter?.showPostDetailsViewController(navigationController: self.navigationController!, navBar: sceneDelegate.customNavBar!)
         }
-        
-        self.navigationController?.pushViewController(detailsVC, animated: true)
     }
     
 }
