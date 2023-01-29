@@ -11,6 +11,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var customNavBar: CustomNavigationBar?
+    var navController: UINavigationController?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -19,25 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
         
-        let module = PostsRouter.createModule()
+        let module = ApplicationFlow.createTabBarController()
         
-        var navController = window?.rootViewController as? UINavigationController
+        navController = window?.rootViewController as? UINavigationController
         navController?.viewControllers = [module]
-        customNavBar = CustomNavigationBar(frame: CGRect(x: 0, y: (navController?.navigationBar.frame.height)! + 20, width: UIScreen.main.bounds.width, height: 40))
         
-
-        if let customNavBar {
-            customNavBar.translatesAutoresizingMaskIntoConstraints = false
-            navController?.view.addSubview(customNavBar)
-            
-            NSLayoutConstraint.activate([
-                customNavBar.leadingAnchor.constraint(equalTo: (navController?.view!.leadingAnchor)!),
-                customNavBar.trailingAnchor.constraint(equalTo: (navController?.view!.trailingAnchor)!),
-                customNavBar.topAnchor.constraint(equalTo: (navController?.view!.topAnchor)!),
-                customNavBar.heightAnchor.constraint(equalToConstant: 100)
-                  ])
-
+        if let navController {
+            addCustomNavbar(with: navController)
         }
+        
+        customNavBar?.navBarDelegate = self
+        navController?.delegate = self
         
     }
 
@@ -69,6 +62,41 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
+    private func addCustomNavbar(with navigationController: UINavigationController) {
+        customNavBar = CustomNavigationBar(frame: CGRect(x: 0, y: (navigationController.navigationBar.frame.height) + 20, width: UIScreen.main.bounds.width, height: 40))
+        
+
+        if let customNavBar {
+            customNavBar.translatesAutoresizingMaskIntoConstraints = false
+            navigationController.view.addSubview(customNavBar)
+            
+            NSLayoutConstraint.activate([
+                customNavBar.leadingAnchor.constraint(equalTo: navigationController.view!.leadingAnchor),
+                customNavBar.trailingAnchor.constraint(equalTo: navigationController.view!.trailingAnchor),
+                customNavBar.topAnchor.constraint(equalTo: navigationController.view!.topAnchor),
+                customNavBar.heightAnchor.constraint(equalToConstant: 100)
+                  ])
+
+        }
+    }
 
 }
 
+extension SceneDelegate : UINavigationControllerDelegate {
+    
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        switch viewController {
+        case viewController as? UITabBarController:
+            customNavBar?.backFromNavigation()
+        default:
+            customNavBar?.navigate()
+        }
+    }
+}
+
+extension SceneDelegate: CustomNavBarDelegate {
+    func didClickBack() {
+        customNavBar?.backFromNavigation()
+        navController?.popViewController(animated: true)
+    }
+}

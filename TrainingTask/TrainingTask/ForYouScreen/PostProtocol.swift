@@ -13,19 +13,22 @@ protocol ForYouViewToPresenterProtocol: AnyObject {
     var interactor: ForYouPresenterToInteractorProtocol? { get set }
     var router: ForYouPresenterToRouterProtocol? { get set }
     
-    func startFetchingPosts(of category: Int)
-    func showPostDetailsViewController(navigationController: UINavigationController, navBar: CustomNavigationBar)
+    func startFetchingPosts(atPosition position: Int)
+    func hidePostsTable()
+    func showPostsTable()
+    func showPostDetailsViewController(navigationController: UINavigationController)
 }
 
 protocol ForYouPresenterToViewProtocol: AnyObject {
+    func hidePostsTable()
+    func showPostsTable()
     func showPosts(posts: [Post])
     func showError()
 }
 
 protocol ForYouPresenterToRouterProtocol {
-    static func createModule() -> UITabBarController
     static func createForYouScreen() -> ForYouViewController
-    func navigateToPostDetailsScreen(navigationController navigationController: UINavigationController, navBar navBar: CustomNavigationBar)
+    func navigateToPostDetailsScreen(navigationController: UINavigationController)
 }
 
 protocol ForYouPresenterToInteractorProtocol: AnyObject {

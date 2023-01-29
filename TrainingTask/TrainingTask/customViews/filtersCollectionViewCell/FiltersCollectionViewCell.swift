@@ -19,11 +19,15 @@ class FiltersCollectionViewCell: UICollectionViewCell {
     
     static let IDENTIFIER = "FiltersCollectionViewCell"
     
-    func setup(with filter: String) {
+    func setup(with filter: String, at position: Int, lastSelected: Int) {
         filterLabel.text = filter
         filterLabel.sizeToFit()
         filterView.layer.masksToBounds = false
         filterView.layer.cornerRadius = 4
+        
+        if (lastSelected == position) {
+            selectFilter()
+        }
     }
     
     func selectFilter() {
