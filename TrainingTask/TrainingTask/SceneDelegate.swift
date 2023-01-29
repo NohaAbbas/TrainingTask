@@ -10,6 +10,7 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
+    var customNavBar: CustomNavigationBar?
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -22,18 +23,22 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         var navController = window?.rootViewController as? UINavigationController
         navController?.viewControllers = [module]
-        var customNavBar = CustomNavigationBar(frame: CGRect(x: 0, y: (navController?.navigationBar.frame.height)! + 20, width: UIScreen.main.bounds.width, height: 40))
+        customNavBar = CustomNavigationBar(frame: CGRect(x: 0, y: (navController?.navigationBar.frame.height)! + 20, width: UIScreen.main.bounds.width, height: 40))
         
-        customNavBar.translatesAutoresizingMaskIntoConstraints = false
 
-        navController?.view.addSubview(customNavBar)
+        if let customNavBar {
+            customNavBar.translatesAutoresizingMaskIntoConstraints = false
+            navController?.view.addSubview(customNavBar)
+            
+            NSLayoutConstraint.activate([
+                customNavBar.leadingAnchor.constraint(equalTo: (navController?.view!.leadingAnchor)!),
+                customNavBar.trailingAnchor.constraint(equalTo: (navController?.view!.trailingAnchor)!),
+                customNavBar.topAnchor.constraint(equalTo: (navController?.view!.topAnchor)!),
+                customNavBar.heightAnchor.constraint(equalToConstant: 100)
+                  ])
+
+        }
         
-        NSLayoutConstraint.activate([
-            customNavBar.leadingAnchor.constraint(equalTo: (navController?.view!.leadingAnchor)!),
-            customNavBar.trailingAnchor.constraint(equalTo: (navController?.view!.trailingAnchor)!),
-            customNavBar.topAnchor.constraint(equalTo: (navController?.view!.topAnchor)!),
-            customNavBar.heightAnchor.constraint(equalToConstant: 100)
-              ])
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

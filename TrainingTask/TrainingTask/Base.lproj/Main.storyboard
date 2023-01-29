@@ -130,10 +130,10 @@
             </objects>
             <point key="canvasLocation" x="229.7709923664122" y="600.70422535211276"/>
         </scene>
-        <!--View Controller-->
+        <!--Post Details View Controller-->
         <scene sceneID="wnf-Wl-af9">
             <objects>
-                <viewController id="8U4-Qx-wmc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostDetailsViewController" id="8U4-Qx-wmc" customClass="PostDetailsViewController" customModule="TrainingTask" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rty-99-tlr">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -8,9 +8,12 @@
 import UIKit
 
 class CustomNavigationBar: UIView {
-    @IBOutlet weak var menuBar: UIButton!
+    @IBOutlet weak var menuButton: UIButton!
     @IBOutlet weak var languageButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var backButton: UIButton!
+    
+    var navBarDelegate: CustomNavBarDelegate?
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +32,19 @@ class CustomNavigationBar: UIView {
         addElevation()
     }
     
+    @IBAction func onBackButtonClcik(_ sender: UIButton) {
+        navBarDelegate?.didClickBack()
+    }
+    func navigate() {
+        backButton.isHidden = false
+        menuButton.isHidden = true
+    }
+    
+    func backFromNavigation() {
+        backButton.isHidden = true
+        menuButton.isHidden = false
+    }
+    
     func addElevation() {
         layer.masksToBounds = false
         layer.shadowRadius = 2
@@ -38,3 +54,6 @@ class CustomNavigationBar: UIView {
     
 }
 
+protocol CustomNavBarDelegate {
+    func didClickBack()
+}

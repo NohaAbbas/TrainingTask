@@ -96,6 +96,16 @@ extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let detailsVC = storyboard?.instantiateViewController(withIdentifier: "PostDetailsViewController") as! PostDetailsViewController
+        if let sceneDelegate = view.window?.windowScene?.delegate as? SceneDelegate {
+            sceneDelegate.customNavBar?.navigate()
+            detailsVC.customNavBar = sceneDelegate.customNavBar
+        }
+        
+        self.navigationController?.pushViewController(detailsVC, animated: true)
+    }
+    
 }
 
 extension ForYouViewController: ForYouPresenterToViewProtocol {
