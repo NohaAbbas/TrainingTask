@@ -16,7 +16,7 @@ protocol ForYouViewToPresenterProtocol: AnyObject {
     func startFetchingPosts(atPosition position: Int)
     func hidePostsTable()
     func showPostsTable()
-    func showPostDetailsViewController(navigationController: UINavigationController)
+    func showPostDetailsViewController(navigationController: UINavigationController, post: Post)
 }
 
 protocol ForYouPresenterToViewProtocol: AnyObject {
@@ -28,7 +28,7 @@ protocol ForYouPresenterToViewProtocol: AnyObject {
 
 protocol ForYouPresenterToRouterProtocol {
     static func createForYouScreen() -> ForYouViewController
-    func navigateToPostDetailsScreen(navigationController: UINavigationController)
+    func navigateToPostDetailsScreen(navigationController: UINavigationController, post: Post)
 }
 
 protocol ForYouPresenterToInteractorProtocol: AnyObject {

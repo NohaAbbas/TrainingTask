@@ -20,8 +20,8 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
         interactor?.fetchPosts(of: filtersIDs[position])
     }
     
-    func showPostDetailsViewController(navigationController: UINavigationController) {
-        router?.navigateToPostDetailsScreen(navigationController: navigationController)
+    func showPostDetailsViewController(navigationController: UINavigationController, post: Post) {
+        router?.navigateToPostDetailsScreen(navigationController: navigationController, post: post)
     }
     
 }
