@@ -12,11 +12,15 @@ struct Post: Codable {
     var title: Title
     var content: Content
     var embedded: EmbeddedLinks
+    var categories: [Category]
+    var date: String
     
     enum CodingKeys: String, CodingKey {
         case title
         case content
         case embedded = "_embedded"
+        case categories = "categories_labels"
+        case date
     }
 }
 
@@ -71,4 +75,8 @@ struct Avatars : Codable {
     enum CodingKeys: String, CodingKey {
         case AvatarSize24Url = "24"
     }
+}
+
+struct Category : Codable {
+    var name: String
 }

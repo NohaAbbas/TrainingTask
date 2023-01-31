@@ -23,6 +23,7 @@
 		BB65C1112987ED4A00246226 /* PostDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */; };
 		BB65C1132987EDD100246226 /* PostDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */; };
 		BB672F76298676FD00CDE37A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */; };
+		BB678F6D2988FDA50017D0DF /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678F6C2988FDA50017D0DF /* DateUtils.swift */; };
 		BB684727297FE32900145344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684726297FE32900145344 /* AppDelegate.swift */; };
 		BB684729297FE32900145344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684728297FE32900145344 /* SceneDelegate.swift */; };
 		BB68472E297FE32900145344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB68472C297FE32900145344 /* Main.storyboard */; };
@@ -79,6 +80,7 @@
 		BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsRouter.swift; sourceTree = "<group>"; };
 		BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsProtocol.swift; sourceTree = "<group>"; };
 		BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
+		BB678F6C2988FDA50017D0DF /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		BB684723297FE32900145344 /* TrainingTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB684726297FE32900145344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB684728297FE32900145344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				BB06F9F8298158CE00E6EABC /* Enums.swift */,
 				BB06FA012981693400E6EABC /* Constants.swift */,
 				BBE38BD62986E0CE0008E81A /* NetworkUtils.swift */,
+				BB678F6C2988FDA50017D0DF /* DateUtils.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -173,6 +176,104 @@
 				BB06F9FE29815E8A00E6EABC /* PostTableViewCell.xib */,
 			);
 			path = postTableViewCell;
+			sourceTree = "<group>";
+		};
+		BB678F6E29891A4C0017D0DF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB678F6F29891A6F0017D0DF /* ForYouVC */,
+				BB06F9FC29815E5700E6EABC /* postTableViewCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB678F6F29891A6F0017D0DF /* ForYouVC */ = {
+			isa = PBXGroup;
+			children = (
+				BB707194298131E2009EDCCD /* ForYouViewController.swift */,
+				BBE38BD82986EA3E0008E81A /* ForYouViewController.xib */,
+			);
+			path = ForYouVC;
+			sourceTree = "<group>";
+		};
+		BB678F7029891A9C0017D0DF /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BB06FA0D298170DC00E6EABC /* PostsInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		BB678F7129891AB00017D0DF /* router */ = {
+			isa = PBXGroup;
+			children = (
+				BB06FA0F298176CB00E6EABC /* PostsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		BB678F7229891AC50017D0DF /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BB06FA0B29816FEC00E6EABC /* PostsPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BB678F7329891AD20017D0DF /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				BBE38BDA2986F9940008E81A /* FilteredPostsEntity.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		BB678F7429891AF80017D0DF /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB06FA0529816A8300E6EABC /* PostProtocol.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		BB678F7529891B0E0017D0DF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB678F7629891B190017D0DF /* PostDetailsVC */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB678F7629891B190017D0DF /* PostDetailsVC */ = {
+			isa = PBXGroup;
+			children = (
+				BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */,
+				BB65C10E2987ECE500246226 /* PostDetailsViewController.xib */,
+			);
+			path = PostDetailsVC;
+			sourceTree = "<group>";
+		};
+		BB678F7729891B940017D0DF /* router */ = {
+			isa = PBXGroup;
+			children = (
+				BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		BB678F7829891BA30017D0DF /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BB678F7929891BB40017D0DF /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */,
+			);
+			path = protocol;
 			sourceTree = "<group>";
 		};
 		BB68471A297FE32900145344 = {
@@ -262,14 +363,12 @@
 		BBE38BD22986B7550008E81A /* ForYouScreen */ = {
 			isa = PBXGroup;
 			children = (
-				BB707194298131E2009EDCCD /* ForYouViewController.swift */,
-				BBE38BD82986EA3E0008E81A /* ForYouViewController.xib */,
-				BB06FA0D298170DC00E6EABC /* PostsInteractor.swift */,
-				BB06FA0B29816FEC00E6EABC /* PostsPresenter.swift */,
-				BB06FA0F298176CB00E6EABC /* PostsRouter.swift */,
-				BB06FA0529816A8300E6EABC /* PostProtocol.swift */,
-				BBE38BDA2986F9940008E81A /* FilteredPostsEntity.swift */,
-				BB06F9FC29815E5700E6EABC /* postTableViewCell */,
+				BB678F6E29891A4C0017D0DF /* view */,
+				BB678F7029891A9C0017D0DF /* interactor */,
+				BB678F7229891AC50017D0DF /* presenter */,
+				BB678F7329891AD20017D0DF /* entity */,
+				BB678F7129891AB00017D0DF /* router */,
+				BB678F7429891AF80017D0DF /* protocol */,
 			);
 			path = ForYouScreen;
 			sourceTree = "<group>";
@@ -277,10 +376,10 @@
 		BBE38BD32986B7660008E81A /* PostDetailsScreen */ = {
 			isa = PBXGroup;
 			children = (
-				BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */,
-				BB65C10E2987ECE500246226 /* PostDetailsViewController.xib */,
-				BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */,
-				BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */,
+				BB678F7529891B0E0017D0DF /* view */,
+				BB678F7829891BA30017D0DF /* presenter */,
+				BB678F7729891B940017D0DF /* router */,
+				BB678F7929891BB40017D0DF /* protocol */,
 			);
 			path = PostDetailsScreen;
 			sourceTree = "<group>";
@@ -559,6 +658,7 @@
 				BB672F76298676FD00CDE37A /* PostDetailsViewController.swift in Sources */,
 				BB06F9F9298158CE00E6EABC /* Enums.swift in Sources */,
 				BB06F9FB29815DCE00E6EABC /* Post.swift in Sources */,
+				BB678F6D2988FDA50017D0DF /* DateUtils.swift in Sources */,
 				BB684729297FE32900145344 /* SceneDelegate.swift in Sources */,
 				BB06FA022981693400E6EABC /* Constants.swift in Sources */,
 			);
