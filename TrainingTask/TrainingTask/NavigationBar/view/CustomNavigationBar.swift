@@ -13,7 +13,7 @@ class CustomNavigationBar: UIView {
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var backButton: UIButton!
     
-    var navBarDelegate: CustomNavBarDelegate?
+    var presenter: NavBarViewToPresenterProtocol?
     
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -33,16 +33,7 @@ class CustomNavigationBar: UIView {
     }
     
     @IBAction func onBackButtonClcik(_ sender: UIButton) {
-        navBarDelegate?.didClickBack()
-    }
-    func navigate() {
-        backButton.isHidden = false
-        menuButton.isHidden = true
-    }
-    
-    func backFromNavigation() {
-        backButton.isHidden = true
-        menuButton.isHidden = false
+        presenter?.onBackClicked()
     }
     
     func addElevation() {
@@ -54,6 +45,20 @@ class CustomNavigationBar: UIView {
     
 }
 
-protocol CustomNavBarDelegate {
-    func didClickBack()
+extension CustomNavigationBar: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        presenter?.handleNavBar(with: viewController)
+    }
+}
+
+extension CustomNavigationBar: NavBarPresenterToViewProtocol {
+    func navigate() {
+        backButton.isHidden = false
+        menuButton.isHidden = true
+    }
+    
+    func backFromNavigation() {
+        backButton.isHidden = true
+        menuButton.isHidden = false
+    }
 }

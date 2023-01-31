@@ -43,16 +43,8 @@ class PostDetailsViewController: UIViewController {
         postTitleLabel.text = post.title.titleString
         tagLabel.text = post.categories.first?.name.uppercased()
         authorNameLabel.text = post.embedded.author[0].name
-        authorImage.sd_setImage(with: URL(string: post.embedded.author.first?.avatar.AvatarSize24Url ?? "")) { img, error, _, url in
-            if let error {
-                print("error in image: error \(error)\nurl: \(url)")
-            }
-        }
-        postImage.sd_setImage(with: URL(string: post.embedded.featuredMedia.first?.imageUrl ?? "")) { img, error, _, url in
-            if let error {
-                print("error in image: error \(error)\nurl: \(url)")
-            }
-        }
+        authorImage.sd_setImage(with: URL(string: post.embedded.author.first?.avatar.AvatarSize24Url ?? ""))
+        postImage.sd_setImage(with: URL(string: post.embedded.featuredMedia.first?.imageUrl ?? "")) 
         webView.loadHTMLString(contentOfArticle, baseURL: nil)
     }
 

@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 class PostsRouter : ForYouPresenterToRouterProtocol {
-    static func createForYouScreen() -> ForYouViewController{
+    var navigationController: UINavigationController?
+    
+    static func createForYouScreen(with navigationController: UINavigationController) -> ForYouViewController{
         let view = ForYouViewController(nibName: ForYouViewController.IDENTIFIER, bundle: Bundle.main)
         view.tabBarItem.title = "For You"
         view.tabBarItem.image = UIImage(systemName: "book.fill")
@@ -24,13 +26,14 @@ class PostsRouter : ForYouPresenterToRouterProtocol {
         presenter.router = router
         interactor.presenter = presenter
         
+        router.navigationController = navigationController
+        
         return view
     }
     
-    func navigateToPostDetailsScreen(navigationController: UINavigationController, post: Post) {
-        let postDetailsVC = PostDetailsRouter.createPostDetailsScreen()
-        postDetailsVC.post = post
-        navigationController.pushViewController(postDetailsVC, animated: true)
+    func navigateToPostDetailsScreen(post: Post) {
+        let postDetailsVC = PostDetailsRouter().createPostDetailsScreen(with: post)
+        navigationController?.pushViewController(postDetailsVC, animated: true)
     }
     
 }

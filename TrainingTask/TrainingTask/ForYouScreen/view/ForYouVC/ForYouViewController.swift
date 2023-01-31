@@ -17,20 +17,16 @@ class ForYouViewController: UIViewController {
     
     static let IDENTIFIER = "ForYouViewController"
     
-    var filteredPostsList = [FilteredPosts]()
+    var filters = [String]()
+    var posts = [Post]()
     var selectedFilterPosition = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for filter in Filters.allCases {
-            filteredPostsList.append(FilteredPosts(filterName: filter.description, posts: []))
-        }
-        
         setupFiltersCollectionView()
         setupPostsTableView()
-        presenter?.startFetchingPosts(atPosition: selectedFilterPosition)
-
+        presenter?.viewDidLoad()
     }
     
     private func setupFiltersCollectionView() {
@@ -64,24 +60,19 @@ class ForYouViewController: UIViewController {
 extension ForYouViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        filteredPostsList.count
+        filters.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FiltersCollectionViewCell.IDENTIFIER, for: indexPath) as! FiltersCollectionViewCell
-        cell.setup(with: filteredPostsList[indexPath.item].filterName, at: indexPath.item, lastSelected: selectedFilterPosition)
+        cell.setup(with: filters[indexPath.item], at: indexPath.item, lastSelected: selectedFilterPosition)
         
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedFilterPosition = indexPath.item
-        if filteredPostsList[selectedFilterPosition].posts.isEmpty {
-            presenter?.startFetchingPosts(atPosition: selectedFilterPosition)
-        } else {
-            presenter?.showPostsTable()
-        }
-        
+        presenter?.startFetchingPosts(atPosition: selectedFilterPosition)
         collectionView.reloadData()
         
     }
@@ -89,18 +80,17 @@ extension ForYouViewController: UICollectionViewDataSource, UICollectionViewDele
 
 extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        filteredPostsList[selectedFilterPosition].posts.count
+        posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.IDENTIFIER, for: indexPath) as! PostTableViewCell
-        let postsList = filteredPostsList[selectedFilterPosition].posts
-        cell.setup(with: postsList[indexPath.row])
+        cell.setup(with: posts[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.showPostDetailsViewController(navigationController: self.navigationController!, post: filteredPostsList[selectedFilterPosition].posts[indexPath.row])
+        presenter?.showPostDetailsViewController(postAt: indexPath.row)
     }
     
 }
@@ -110,13 +100,14 @@ extension ForYouViewController: ForYouPresenterToViewProtocol {
         hideTableView()
     }
     
-    func showPostsTable() {
+    func showPosts(posts: [Post]) {
+        self.posts = posts
         showTableView()
     }
     
-    func showPosts(posts: [Post]) {
-        filteredPostsList[selectedFilterPosition].posts = posts
-        presenter?.showPostsTable()
+    func showFilters(filters: [String]) {
+        self.filters = filters
+        filtersCollectionView.reloadData()
     }
     
     func showError() {

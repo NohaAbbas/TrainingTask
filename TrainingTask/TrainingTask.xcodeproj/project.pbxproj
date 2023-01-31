@@ -24,6 +24,9 @@
 		BB65C1132987EDD100246226 /* PostDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */; };
 		BB672F76298676FD00CDE37A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */; };
 		BB678F6D2988FDA50017D0DF /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678F6C2988FDA50017D0DF /* DateUtils.swift */; };
+		BB678F7B298929BA0017D0DF /* PostDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678F7A298929BA0017D0DF /* PostDetailsPresenter.swift */; };
+		BB678F8129892C4D0017D0DF /* NavBarRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678F8029892C4D0017D0DF /* NavBarRouter.swift */; };
+		BB678F83298930060017D0DF /* NavBarPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678F82298930060017D0DF /* NavBarPresenter.swift */; };
 		BB684727297FE32900145344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684726297FE32900145344 /* AppDelegate.swift */; };
 		BB684729297FE32900145344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684728297FE32900145344 /* SceneDelegate.swift */; };
 		BB68472E297FE32900145344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB68472C297FE32900145344 /* Main.storyboard */; };
@@ -33,6 +36,7 @@
 		BB684748297FE32D00145344 /* TrainingTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684747297FE32D00145344 /* TrainingTaskUITests.swift */; };
 		BB68474A297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684749297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift */; };
 		BB707195298131E2009EDCCD /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB707194298131E2009EDCCD /* ForYouViewController.swift */; };
+		BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8EA54C29893C16001454AA /* NavBarProtocol.swift */; };
 		BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */; };
 		BBDF9F0F297FFD1E00BEF26B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */; };
 		BBE38BD52986CF7F0008E81A /* ApplicationFlow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE38BD42986CF7F0008E81A /* ApplicationFlow.swift */; };
@@ -81,6 +85,9 @@
 		BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsProtocol.swift; sourceTree = "<group>"; };
 		BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		BB678F6C2988FDA50017D0DF /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		BB678F7A298929BA0017D0DF /* PostDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresenter.swift; sourceTree = "<group>"; };
+		BB678F8029892C4D0017D0DF /* NavBarRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarRouter.swift; sourceTree = "<group>"; };
+		BB678F82298930060017D0DF /* NavBarPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarPresenter.swift; sourceTree = "<group>"; };
 		BB684723297FE32900145344 /* TrainingTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TrainingTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB684726297FE32900145344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB684728297FE32900145344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +101,7 @@
 		BB684747297FE32D00145344 /* TrainingTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskUITests.swift; sourceTree = "<group>"; };
 		BB684749297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		BB707194298131E2009EDCCD /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
+		BB8EA54C29893C16001454AA /* NavBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarProtocol.swift; sourceTree = "<group>"; };
 		BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
 		BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
 		BBE38BD42986CF7F0008E81A /* ApplicationFlow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationFlow.swift; sourceTree = "<group>"; };
@@ -264,6 +272,7 @@
 		BB678F7829891BA30017D0DF /* presenter */ = {
 			isa = PBXGroup;
 			children = (
+				BB678F7A298929BA0017D0DF /* PostDetailsPresenter.swift */,
 			);
 			path = presenter;
 			sourceTree = "<group>";
@@ -274,6 +283,42 @@
 				BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */,
 			);
 			path = protocol;
+			sourceTree = "<group>";
+		};
+		BB678F7C29892B070017D0DF /* NavigationBar */ = {
+			isa = PBXGroup;
+			children = (
+				BB678F7D29892B220017D0DF /* view */,
+				BB678F7E29892B450017D0DF /* presenter */,
+				BB678F7F29892B540017D0DF /* router */,
+				BB8EA54B29893BFA001454AA /* protocol */,
+			);
+			path = NavigationBar;
+			sourceTree = "<group>";
+		};
+		BB678F7D29892B220017D0DF /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */,
+				BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB678F7E29892B450017D0DF /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BB678F82298930060017D0DF /* NavBarPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BB678F7F29892B540017D0DF /* router */ = {
+			isa = PBXGroup;
+			children = (
+				BB678F8029892C4D0017D0DF /* NavBarRouter.swift */,
+			);
+			path = router;
 			sourceTree = "<group>";
 		};
 		BB68471A297FE32900145344 = {
@@ -302,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE38BD42986CF7F0008E81A /* ApplicationFlow.swift */,
+				BB678F7C29892B070017D0DF /* NavigationBar */,
 				BBE38BD22986B7550008E81A /* ForYouScreen */,
 				BBE38BD32986B7660008E81A /* PostDetailsScreen */,
 				BB684757297FE61C00145344 /* entity */,
@@ -345,19 +391,17 @@
 		BB68475D297FFBCA00145344 /* customViews */ = {
 			isa = PBXGroup;
 			children = (
-				BB684760297FFC6D00145344 /* customNavBar */,
 				BBFF2354298031BA0094E724 /* filtersCollectionViewCell */,
 			);
 			path = customViews;
 			sourceTree = "<group>";
 		};
-		BB684760297FFC6D00145344 /* customNavBar */ = {
+		BB8EA54B29893BFA001454AA /* protocol */ = {
 			isa = PBXGroup;
 			children = (
-				BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */,
-				BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */,
+				BB8EA54C29893C16001454AA /* NavBarProtocol.swift */,
 			);
-			path = customNavBar;
+			path = protocol;
 			sourceTree = "<group>";
 		};
 		BBE38BD22986B7550008E81A /* ForYouScreen */ = {
@@ -652,13 +696,17 @@
 				BBE38BD52986CF7F0008E81A /* ApplicationFlow.swift in Sources */,
 				BBE38BD72986E0CE0008E81A /* NetworkUtils.swift in Sources */,
 				BB65C1132987EDD100246226 /* PostDetailsProtocol.swift in Sources */,
+				BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */,
 				BBE38BDB2986F9940008E81A /* FilteredPostsEntity.swift in Sources */,
+				BB678F83298930060017D0DF /* NavBarPresenter.swift in Sources */,
 				BB707195298131E2009EDCCD /* ForYouViewController.swift in Sources */,
 				BB06FA0629816A8300E6EABC /* PostProtocol.swift in Sources */,
 				BB672F76298676FD00CDE37A /* PostDetailsViewController.swift in Sources */,
 				BB06F9F9298158CE00E6EABC /* Enums.swift in Sources */,
+				BB678F8129892C4D0017D0DF /* NavBarRouter.swift in Sources */,
 				BB06F9FB29815DCE00E6EABC /* Post.swift in Sources */,
 				BB678F6D2988FDA50017D0DF /* DateUtils.swift in Sources */,
+				BB678F7B298929BA0017D0DF /* PostDetailsPresenter.swift in Sources */,
 				BB684729297FE32900145344 /* SceneDelegate.swift in Sources */,
 				BB06FA022981693400E6EABC /* Constants.swift in Sources */,
 			);

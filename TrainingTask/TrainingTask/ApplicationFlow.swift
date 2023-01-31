@@ -8,9 +8,9 @@
 import UIKit
 
 class ApplicationFlow {
-    static func createTabBarController() -> UITabBarController {
+    static func createTabBarController(with navigationController: UINavigationController) -> UITabBarController {
         let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
-        view.viewControllers = [PostsRouter.createForYouScreen()]
+        view.viewControllers = [PostsRouter.createForYouScreen(with: navigationController)]
         return view
     }
 }
