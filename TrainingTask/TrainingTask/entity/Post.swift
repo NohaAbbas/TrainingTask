@@ -14,6 +14,9 @@ struct Post: Codable {
     var embedded: EmbeddedLinks
     var categories: [Category]
     var date: String
+    var formattedDate: String? {
+        getDateAsString(dateString: date)
+    }
     
     enum CodingKeys: String, CodingKey {
         case title

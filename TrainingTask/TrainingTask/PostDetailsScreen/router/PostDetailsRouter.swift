@@ -11,7 +11,10 @@ class PostDetailsRouter {
     func createPostDetailsScreen(with post: Post) -> PostDetailsViewController {
         let view = PostDetailsViewController(nibName: PostDetailsViewController.IDENTIFIER, bundle: Bundle.main)
         
-        let presenter = PostDetailsPresenter(post: post)
+        let presenter = PostDetailsPresenter()
+        view.presenter = presenter
+        presenter.view = view
+        presenter.post = post
         
         return view
     }

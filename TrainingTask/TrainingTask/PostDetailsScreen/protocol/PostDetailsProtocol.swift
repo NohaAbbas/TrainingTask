@@ -8,5 +8,9 @@
 import Foundation
 
 protocol PostDetailsViewToPresenterProtocol: AnyObject {
-    func getPostContent(content: String, date: String)
+    func viewDidLoad()
+}
+
+protocol PostDetailsPresenterToViewProtocol: AnyObject {
+    func setupViews(with post: Post)
 }
