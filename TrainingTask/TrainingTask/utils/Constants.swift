@@ -8,3 +8,4 @@
 import Foundation
 
 let POSTS_URL = "https://blog.mumzworld.com/wp-json/wp/v2/posts?_embed=1"
+let USERS_URL = "https://blog.mumzworld.com/wp-json/wp/v2/users"

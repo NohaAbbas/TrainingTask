@@ -22,6 +22,12 @@
 		BB65C10F2987ECE500246226 /* PostDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB65C10E2987ECE500246226 /* PostDetailsViewController.xib */; };
 		BB65C1112987ED4A00246226 /* PostDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */; };
 		BB65C1132987EDD100246226 /* PostDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */; };
+		BB66EE4B298A631100B80C14 /* QuestionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE4A298A631100B80C14 /* QuestionsPresenter.swift */; };
+		BB66EE4D298A636B00B80C14 /* QuestionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE4C298A636B00B80C14 /* QuestionsProtocol.swift */; };
+		BB66EE57298A6BAF00B80C14 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE55298A6BAF00B80C14 /* UsersCollectionViewCell.swift */; };
+		BB66EE58298A6BAF00B80C14 /* UsersCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB66EE56298A6BAF00B80C14 /* UsersCollectionViewCell.xib */; };
+		BB66EE5A298A945B00B80C14 /* FilteredUsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE59298A945B00B80C14 /* FilteredUsers.swift */; };
+		BB66EE5C298AB22700B80C14 /* QuestionsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE5B298AB22700B80C14 /* QuestionsInteractor.swift */; };
 		BB672F76298676FD00CDE37A /* PostDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */; };
 		BB678F6D2988FDA50017D0DF /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678F6C2988FDA50017D0DF /* DateUtils.swift */; };
 		BB678F7B298929BA0017D0DF /* PostDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB678F7A298929BA0017D0DF /* PostDetailsPresenter.swift */; };
@@ -35,6 +41,10 @@
 		BB68473E297FE32D00145344 /* TrainingTaskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB68473D297FE32D00145344 /* TrainingTaskTests.swift */; };
 		BB684748297FE32D00145344 /* TrainingTaskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684747297FE32D00145344 /* TrainingTaskUITests.swift */; };
 		BB68474A297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB684749297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift */; };
+		BB6941BB298A582700CDAE72 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6941BA298A582700CDAE72 /* User.swift */; };
+		BB6941C8298A5AA200CDAE72 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6941C6298A5AA200CDAE72 /* QuestionsViewController.swift */; };
+		BB6941C9298A5AA200CDAE72 /* QuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6941C7298A5AA200CDAE72 /* QuestionsViewController.xib */; };
+		BB6941CB298A5B7A00CDAE72 /* QuestionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */; };
 		BB707195298131E2009EDCCD /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB707194298131E2009EDCCD /* ForYouViewController.swift */; };
 		BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8EA54C29893C16001454AA /* NavBarProtocol.swift */; };
 		BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */; };
@@ -83,6 +93,12 @@
 		BB65C10E2987ECE500246226 /* PostDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PostDetailsViewController.xib; sourceTree = "<group>"; };
 		BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsRouter.swift; sourceTree = "<group>"; };
 		BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsProtocol.swift; sourceTree = "<group>"; };
+		BB66EE4A298A631100B80C14 /* QuestionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsPresenter.swift; sourceTree = "<group>"; };
+		BB66EE4C298A636B00B80C14 /* QuestionsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsProtocol.swift; sourceTree = "<group>"; };
+		BB66EE55298A6BAF00B80C14 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
+		BB66EE56298A6BAF00B80C14 /* UsersCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersCollectionViewCell.xib; sourceTree = "<group>"; };
+		BB66EE59298A945B00B80C14 /* FilteredUsers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilteredUsers.swift; sourceTree = "<group>"; };
+		BB66EE5B298AB22700B80C14 /* QuestionsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsInteractor.swift; sourceTree = "<group>"; };
 		BB672F75298676FD00CDE37A /* PostDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsViewController.swift; sourceTree = "<group>"; };
 		BB678F6C2988FDA50017D0DF /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 		BB678F7A298929BA0017D0DF /* PostDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsPresenter.swift; sourceTree = "<group>"; };
@@ -100,6 +116,10 @@
 		BB684743297FE32D00145344 /* TrainingTaskUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TrainingTaskUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB684747297FE32D00145344 /* TrainingTaskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskUITests.swift; sourceTree = "<group>"; };
 		BB684749297FE32D00145344 /* TrainingTaskUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrainingTaskUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BB6941BA298A582700CDAE72 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BB6941C6298A5AA200CDAE72 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		BB6941C7298A5AA200CDAE72 /* QuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionsViewController.xib; sourceTree = "<group>"; };
+		BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsRouter.swift; sourceTree = "<group>"; };
 		BB707194298131E2009EDCCD /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		BB8EA54C29893C16001454AA /* NavBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarProtocol.swift; sourceTree = "<group>"; };
 		BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
@@ -184,6 +204,23 @@
 				BB06F9FE29815E8A00E6EABC /* PostTableViewCell.xib */,
 			);
 			path = postTableViewCell;
+			sourceTree = "<group>";
+		};
+		BB66EE4E298A684C00B80C14 /* entity */ = {
+			isa = PBXGroup;
+			children = (
+				BB66EE59298A945B00B80C14 /* FilteredUsers.swift */,
+			);
+			path = entity;
+			sourceTree = "<group>";
+		};
+		BB66EE4F298A6A4F00B80C14 /* UserCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB66EE55298A6BAF00B80C14 /* UsersCollectionViewCell.swift */,
+				BB66EE56298A6BAF00B80C14 /* UsersCollectionViewCell.xib */,
+			);
+			path = UserCell;
 			sourceTree = "<group>";
 		};
 		BB678F6E29891A4C0017D0DF /* view */ = {
@@ -350,6 +387,7 @@
 				BB678F7C29892B070017D0DF /* NavigationBar */,
 				BBE38BD22986B7550008E81A /* ForYouScreen */,
 				BBE38BD32986B7660008E81A /* PostDetailsScreen */,
+				BB6941B9298A560300CDAE72 /* QuestionsScreen */,
 				BB684757297FE61C00145344 /* entity */,
 				BB68475D297FFBCA00145344 /* customViews */,
 				BB06F9F7298158B700E6EABC /* utils */,
@@ -384,6 +422,7 @@
 			isa = PBXGroup;
 			children = (
 				BB06F9FA29815DCE00E6EABC /* Post.swift */,
+				BB6941BA298A582700CDAE72 /* User.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -394,6 +433,69 @@
 				BBFF2354298031BA0094E724 /* filtersCollectionViewCell */,
 			);
 			path = customViews;
+			sourceTree = "<group>";
+		};
+		BB6941B9298A560300CDAE72 /* QuestionsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BB6941BC298A59AA00CDAE72 /* view */,
+				BB6941BD298A59CC00CDAE72 /* interactor */,
+				BB6941BE298A59D500CDAE72 /* presenter */,
+				BB66EE4E298A684C00B80C14 /* entity */,
+				BB6941BF298A59DE00CDAE72 /* router */,
+				BB6941C0298A59E500CDAE72 /* protocol */,
+			);
+			path = QuestionsScreen;
+			sourceTree = "<group>";
+		};
+		BB6941BC298A59AA00CDAE72 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB6941C1298A5A4300CDAE72 /* QuestionsVC */,
+				BB66EE4F298A6A4F00B80C14 /* UserCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB6941BD298A59CC00CDAE72 /* interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BB66EE5B298AB22700B80C14 /* QuestionsInteractor.swift */,
+			);
+			path = interactor;
+			sourceTree = "<group>";
+		};
+		BB6941BE298A59D500CDAE72 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BB66EE4A298A631100B80C14 /* QuestionsPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BB6941BF298A59DE00CDAE72 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		BB6941C0298A59E500CDAE72 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB66EE4C298A636B00B80C14 /* QuestionsProtocol.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		BB6941C1298A5A4300CDAE72 /* QuestionsVC */ = {
+			isa = PBXGroup;
+			children = (
+				BB6941C6298A5AA200CDAE72 /* QuestionsViewController.swift */,
+				BB6941C7298A5AA200CDAE72 /* QuestionsViewController.xib */,
+			);
+			path = QuestionsVC;
 			sourceTree = "<group>";
 		};
 		BB8EA54B29893BFA001454AA /* protocol */ = {
@@ -556,6 +658,8 @@
 				BBE38BD92986EA3E0008E81A /* ForYouViewController.xib in Resources */,
 				BBFF235C2980329E0094E724 /* FiltersCollectionViewCell.xib in Resources */,
 				BB06FA0029815E8A00E6EABC /* PostTableViewCell.xib in Resources */,
+				BB6941C9298A5AA200CDAE72 /* QuestionsViewController.xib in Resources */,
+				BB66EE58298A6BAF00B80C14 /* UsersCollectionViewCell.xib in Resources */,
 				BB684730297FE32C00145344 /* Assets.xcassets in Resources */,
 				BB68472E297FE32900145344 /* Main.storyboard in Resources */,
 			);
@@ -685,16 +789,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB66EE4D298A636B00B80C14 /* QuestionsProtocol.swift in Sources */,
 				BB06FA0E298170DC00E6EABC /* PostsInteractor.swift in Sources */,
 				BBDF9F0F297FFD1E00BEF26B /* CustomNavigationBar.swift in Sources */,
+				BB66EE4B298A631100B80C14 /* QuestionsPresenter.swift in Sources */,
+				BB66EE5A298A945B00B80C14 /* FilteredUsers.swift in Sources */,
 				BB06FA10298176CB00E6EABC /* PostsRouter.swift in Sources */,
+				BB6941BB298A582700CDAE72 /* User.swift in Sources */,
+				BB6941C8298A5AA200CDAE72 /* QuestionsViewController.swift in Sources */,
 				BB65C1112987ED4A00246226 /* PostDetailsRouter.swift in Sources */,
 				BB684727297FE32900145344 /* AppDelegate.swift in Sources */,
 				BBFF235B2980329D0094E724 /* FiltersCollectionViewCell.swift in Sources */,
 				BB06FA0C29816FEC00E6EABC /* PostsPresenter.swift in Sources */,
 				BB06F9FF29815E8A00E6EABC /* PostTableViewCell.swift in Sources */,
 				BBE38BD52986CF7F0008E81A /* ApplicationFlow.swift in Sources */,
+				BB6941CB298A5B7A00CDAE72 /* QuestionsRouter.swift in Sources */,
 				BBE38BD72986E0CE0008E81A /* NetworkUtils.swift in Sources */,
+				BB66EE57298A6BAF00B80C14 /* UsersCollectionViewCell.swift in Sources */,
 				BB65C1132987EDD100246226 /* PostDetailsProtocol.swift in Sources */,
 				BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */,
 				BBE38BDB2986F9940008E81A /* FilteredPostsEntity.swift in Sources */,
@@ -704,6 +815,7 @@
 				BB672F76298676FD00CDE37A /* PostDetailsViewController.swift in Sources */,
 				BB06F9F9298158CE00E6EABC /* Enums.swift in Sources */,
 				BB678F8129892C4D0017D0DF /* NavBarRouter.swift in Sources */,
+				BB66EE5C298AB22700B80C14 /* QuestionsInteractor.swift in Sources */,
 				BB06F9FB29815DCE00E6EABC /* Post.swift in Sources */,
 				BB678F6D2988FDA50017D0DF /* DateUtils.swift in Sources */,
 				BB678F7B298929BA0017D0DF /* PostDetailsPresenter.swift in Sources */,

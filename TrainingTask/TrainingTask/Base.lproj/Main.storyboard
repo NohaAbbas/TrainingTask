@@ -39,7 +39,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="wwx-fE-SL0" kind="relationship" relationship="viewControllers" id="eh4-8D-tYH"/>
                         <segue destination="G8L-Ja-jd9" kind="relationship" relationship="viewControllers" id="qZm-YR-qP8"/>
                     </connections>
                 </tabBarController>
@@ -79,25 +78,8 @@
             </objects>
             <point key="canvasLocation" x="230" y="1421"/>
         </scene>
-        <!--Questions-->
-        <scene sceneID="Bj9-W3-ax0">
-            <objects>
-                <viewController id="wwx-fE-SL0" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="C2x-QW-PVV">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="BlM-bK-Oax"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Questions" image="message.fill" catalog="system" id="Vs0-wD-tBS"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="66C-ye-7NG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1196" y="601"/>
-        </scene>
     </scenes>
     <resources>
-        <image name="message.fill" catalog="system" width="128" height="114"/>
         <image name="video.fill" catalog="system" width="128" height="81"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
