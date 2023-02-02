@@ -7,9 +7,7 @@
 
 import UIKit
 
-protocol NavBarViewToPresenterProtocol: AnyObject {
-    var view: NavBarPresenterToViewProtocol? { get set }
-    
+protocol NavBarViewToPresenterProtocol: AnyObject {    
     func handleNavBar(with viewController: UIViewController)
     func onBackClicked()
 }
@@ -17,4 +15,8 @@ protocol NavBarViewToPresenterProtocol: AnyObject {
 protocol NavBarPresenterToViewProtocol: AnyObject {
     func navigate()
     func backFromNavigation()
+}
+
+protocol NavBarPresenterToRouterProtocol: AnyObject {
+    func navigateToPreviousScreen()
 }

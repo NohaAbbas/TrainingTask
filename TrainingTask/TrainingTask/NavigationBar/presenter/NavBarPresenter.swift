@@ -9,20 +9,18 @@ import UIKit
 
 class NavBarPresenter: NavBarViewToPresenterProtocol {
     weak var view: NavBarPresenterToViewProtocol?
-    
-    var navigationController: UINavigationController?
-    
+    var router: NavBarPresenterToRouterProtocol?
+        
     func handleNavBar(with viewController: UIViewController) {
         switch viewController {
         case viewController as? UITabBarController:
             view?.backFromNavigation()
-            navigationController?.popViewController(animated: true)
         default:
             view?.navigate()
         }
     }
     
     func onBackClicked() {
-        navigationController?.popViewController(animated: true)
+        router?.navigateToPreviousScreen()
     }
 }
