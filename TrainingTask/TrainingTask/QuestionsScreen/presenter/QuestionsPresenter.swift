@@ -12,8 +12,9 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
     weak var view: QuestionsPresenterToViewProtocol?
     var interactor: QuestionsPresenterToInteractorProtocol?
     
+    let filtersIDs = Filters.allCases.map { $0.rawValue }
     var filteredUsers = [FilteredUsers]()
-    var selectedCategory = 0
+    let ALL_FILTER_POSITION = 0
     
     init() {
         for filter in Filters.allCases {
@@ -23,25 +24,23 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
     
     func viewDidLoad() {
         view?.showFilters(filters: filteredUsers.map{ $0.filterName })
-        startFetchingUsers(of: selectedCategory)
+        startFetchingUsers(of: ALL_FILTER_POSITION)
     }
     
     func startFetchingUsers(of category: Int) {
-        selectedCategory = category
-
-        if !filteredUsers[selectedCategory].users.isEmpty {
-            view?.showUsers(users: filteredUsers[selectedCategory].users)
+        if !filteredUsers[category].users.isEmpty {
+            view?.showUsers(users: filteredUsers[category].users)
             return
         }
         view?.hideCollectionView()
-        interactor?.fetchUsers(of: selectedCategory)
+        interactor?.fetchUsers(of: filtersIDs[category], at: category)
     }
     
 }
 
 extension QuestionsPresenter: QuestionsInteractorToPresenterProtocol {
-    func usersFetchingSucceeded(users: [User]) {
-        filteredUsers[selectedCategory].users = users
+    func usersFetchingSucceeded(users: [User], at filterPosition: Int) {
+        filteredUsers[filterPosition].users = users
         view?.showUsers(users: users)
     }
     

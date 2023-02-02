@@ -13,7 +13,7 @@ class PostsInteractor: ForYouPresenterToInteractorProtocol {
     let ALL_FILTER_POSITION = 0
     
     func fetchPosts(of category: Int, filter filterPosition : Int) {
-        var urlString = POSTS_URL
+        var urlString = Constants.POSTS_URL
         if category != ALL_FILTER_POSITION {
             urlString.append("&categories=\(category)")
         }

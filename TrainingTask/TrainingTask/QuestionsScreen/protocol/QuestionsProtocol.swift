@@ -8,9 +8,6 @@
 import Foundation
 
 protocol QuestionsViewToPresenterProtocol : AnyObject {
-    var view: QuestionsPresenterToViewProtocol? { get set }
-    var interactor: QuestionsPresenterToInteractorProtocol? { get set }
-    
     func viewDidLoad()
     func startFetchingUsers(of category: Int)
 }
@@ -23,11 +20,10 @@ protocol QuestionsPresenterToViewProtocol: AnyObject {
 }
 
 protocol QuestionsPresenterToInteractorProtocol: AnyObject {
-    var presenter: QuestionsInteractorToPresenterProtocol? { get set }
-    func fetchUsers(of category: Int)
+    func fetchUsers(of category: Int, at filterPosition: Int)
 }
 
 protocol QuestionsInteractorToPresenterProtocol: AnyObject {
-    func usersFetchingSucceeded(users: [User])
+    func usersFetchingSucceeded(users: [User], at filterPosition: Int)
     func usersFetchingFailed()
 }
