@@ -90,7 +90,7 @@ extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.showPostDetailsViewController(postAt: indexPath.row)
+        presenter?.showPostDetailsViewController(postAt: indexPath.row, filter: selectedFilterPosition)
     }
     
 }

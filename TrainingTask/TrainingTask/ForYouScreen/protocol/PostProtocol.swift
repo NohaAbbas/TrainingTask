@@ -9,14 +9,10 @@ import Foundation
 import UIKit
 
 protocol ForYouViewToPresenterProtocol: AnyObject {
-    var view: ForYouPresenterToViewProtocol? { get set }
-    var interactor: ForYouPresenterToInteractorProtocol? { get set }
-    var router: ForYouPresenterToRouterProtocol? { get set }
-    
     func viewDidLoad()
     func startFetchingPosts(atPosition position: Int)
     func hidePostsTable()
-    func showPostDetailsViewController(postAt position: Int)
+    func showPostDetailsViewController(postAt postPosition: Int, filter filterPosition: Int)
 }
 
 protocol ForYouPresenterToViewProtocol: AnyObject {
@@ -27,18 +23,15 @@ protocol ForYouPresenterToViewProtocol: AnyObject {
 }
 
 protocol ForYouPresenterToRouterProtocol {
-    var navigationController: UINavigationController? { get set }
-    
-    static func createForYouScreen(with navigationController: UINavigationController) -> ForYouViewController
     func navigateToPostDetailsScreen(post: Post)
 }
 
 protocol ForYouPresenterToInteractorProtocol: AnyObject {
     var presenter: ForYouInteractorToPresenterProtocol? { get set }
-    func fetchPosts(of category: Int)
+    func fetchPosts(of category: Int, filter filterPosition: Int)
 }
 
 protocol ForYouInteractorToPresenterProtocol: AnyObject {
-    func postsFetchingSuccess(posts: [Post])
+    func postsFetchingSuccess(posts: [Post], of filter: Int)
     func postsFetchingFailure()
 }

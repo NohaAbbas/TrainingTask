@@ -15,7 +15,7 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
     
     let filtersIDs = Filters.allCases.map { $0.rawValue }
     var filteredPostsList = [FilteredPosts]()
-    var selectedFilterPosition = 0
+    let ALL_FILTER_POSITION = 0
     
     init() {
         for filter in Filters.allCases {
@@ -25,29 +25,29 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
     
     func viewDidLoad() {
         view?.showFilters(filters: filteredPostsList.map{ $0.filterName })
-        startFetchingPosts(atPosition: selectedFilterPosition)
+        startFetchingPosts(atPosition: ALL_FILTER_POSITION)
     }
     
     func startFetchingPosts(atPosition position: Int) {
-        selectedFilterPosition = position
         if !filteredPostsList[position].posts.isEmpty {
             view?.showPosts(posts: filteredPostsList[position].posts)
             return
         }
         
         hidePostsTable()
-        interactor?.fetchPosts(of: filtersIDs[position])
+        interactor?.fetchPosts(of: filtersIDs[position], filter: position)
     }
     
-    func showPostDetailsViewController(postAt position: Int) {
-        router?.navigateToPostDetailsScreen(post: filteredPostsList[selectedFilterPosition].posts[position])
+    func showPostDetailsViewController(postAt postPosition: Int, filter filterPosition: Int) {
+        router?.navigateToPostDetailsScreen(post: filteredPostsList[filterPosition].posts[postPosition])
     }
     
 }
 
 extension PostsPresenter: ForYouInteractorToPresenterProtocol {
-    func postsFetchingSuccess(posts: [Post]) {
-        filteredPostsList[selectedFilterPosition].posts = posts
+    
+    func postsFetchingSuccess(posts: [Post], of filter: Int) {
+        filteredPostsList[filter].posts = posts
         view?.showPosts(posts: posts)
     }
     
@@ -58,6 +58,5 @@ extension PostsPresenter: ForYouInteractorToPresenterProtocol {
     func hidePostsTable() {
         view?.hidePostsTable()
     }
-
     
 }
