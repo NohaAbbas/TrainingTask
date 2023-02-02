@@ -33,3 +33,10 @@ enum Filters : Int, CustomStringConvertible, CaseIterable {
     }
 }
 
+enum DateInputFormat: String {
+    case FULL_DATE_TIME = "yyyy-MM-dd'T'HH:mm:ss"
+}
+
+enum DateDesiredFormat: String {
+    case MONTH_DAY_YEAR = "MMMM dd, YYYY"
+}
