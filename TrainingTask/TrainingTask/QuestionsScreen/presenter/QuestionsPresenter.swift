@@ -23,7 +23,6 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
     }
     
     func viewDidLoad() {
-        view?.showFilters(filters: filteredUsers.map{ $0.filterName })
         startFetchingUsers(of: ALL_FILTER_POSITION)
     }
     

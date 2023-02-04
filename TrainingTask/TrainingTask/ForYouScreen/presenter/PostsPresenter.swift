@@ -24,7 +24,6 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
     }
     
     func viewDidLoad() {
-        view?.showFilters(filters: filteredPostsList.map{ $0.filterName })
         startFetchingPosts(atPosition: ALL_FILTER_POSITION)
     }
     

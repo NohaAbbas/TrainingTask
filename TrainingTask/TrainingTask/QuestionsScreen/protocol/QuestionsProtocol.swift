@@ -13,7 +13,6 @@ protocol QuestionsViewToPresenterProtocol : AnyObject {
 }
 
 protocol QuestionsPresenterToViewProtocol: AnyObject {
-    func showFilters(filters: [String])
     func hideCollectionView()
     func showUsers(users: [User])
     func showError()

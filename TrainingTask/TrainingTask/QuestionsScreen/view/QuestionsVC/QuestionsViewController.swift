@@ -9,31 +9,22 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
     static let IDENTIFIER = "QuestionsViewController"
-
-    @IBOutlet weak var filtersCollectionView: UICollectionView!
+    
+    @IBOutlet weak var filtersCollectionView: FiltersCollectionView!
     @IBOutlet weak var usersCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var filters = [String]()
-    var selectedFilterPosition = 0
     var users = [User]()
     var presenter: QuestionsViewToPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        presenter?.viewDidLoad()
         
-        setupFiltersCollectionView()
+        presenter?.viewDidLoad()
+        filtersCollectionView.filtersDelegate = self
         setupUsersCollectionView()
     }
     
-    private func setupFiltersCollectionView() {
-        filtersCollectionView.register(UINib(nibName: FiltersCollectionViewCell.IDENTIFIER, bundle: nil), forCellWithReuseIdentifier: FiltersCollectionViewCell.IDENTIFIER)
-        filtersCollectionView.dataSource = self
-        filtersCollectionView.delegate = self
-    }
-
     private func setupUsersCollectionView() {
         usersCollectionView.register(UINib(nibName: UsersCollectionViewCell.IDENTIFIER, bundle: nil), forCellWithReuseIdentifier: UsersCollectionViewCell.IDENTIFIER)
         usersCollectionView.dataSource = self
@@ -56,40 +47,17 @@ class QuestionsViewController: UIViewController {
 }
 
 extension QuestionsViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        switch collectionView {
-        case filtersCollectionView :
-            return filters.count
-        default:
-            return users.count
-        }
+        return users.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch collectionView {
-        case filtersCollectionView :
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FiltersCollectionViewCell.IDENTIFIER, for: indexPath) as! FiltersCollectionViewCell
-            cell.setup(with: filters[indexPath.item], at: indexPath.item, lastSelected: selectedFilterPosition)
-            return cell
-        default:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsersCollectionViewCell.IDENTIFIER, for: indexPath) as! UsersCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsersCollectionViewCell.IDENTIFIER, for: indexPath) as! UsersCollectionViewCell
         
-            cell.setupCell(at: indexPath.item, with: users[indexPath.item])
-            return cell
-        }
+        cell.setupCell(at: indexPath.item, with: users[indexPath.item])
+        return cell
         
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        switch collectionView {
-        case filtersCollectionView:
-            selectedFilterPosition = indexPath.item
-            presenter?.startFetchingUsers(of: selectedFilterPosition)
-            filtersCollectionView.reloadData()
-        default:
-            break
-            
-        }
     }
     
     
@@ -105,11 +73,6 @@ extension QuestionsViewController: UICollectionViewDataSource, UICollectionViewD
 
 extension QuestionsViewController: QuestionsPresenterToViewProtocol {
     
-    func showFilters(filters: [String]) {
-        self.filters = filters
-        filtersCollectionView.reloadData()
-    }
-    
     func hideCollectionView(){
         hideUsersCollectionView()
     }
@@ -123,4 +86,11 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
         print("Error fetching users")
     }
     
+}
+
+
+extension QuestionsViewController: FiltersCollectionViewProtocol {
+    func filterCellClicked(selectedFilterPosition: Int) {
+        presenter?.startFetchingUsers(of: selectedFilterPosition)
+    }
 }

@@ -6,14 +6,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
-        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ForYouViewController" customModule="TrainingTask" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="qRd-6y-u4p" id="SLA-mn-bdj"/>
-                <outlet property="filtersCollectionView" destination="tWF-Id-iEU" id="BV2-Dg-IwM"/>
+                <outlet property="filtersCollectionView" destination="fak-AR-oXM" id="XKB-mV-gS5"/>
                 <outlet property="postsTableView" destination="6nP-u3-8yF" id="rJD-sX-Psn"/>
                 <outlet property="view" destination="SLp-Te-qIG" id="2C6-9f-o41"/>
             </connections>
@@ -23,29 +22,19 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="tWF-Id-iEU">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="fak-AR-oXM" customClass="FiltersCollectionView" customModule="TrainingTask" customModuleProvider="target">
                     <rect key="frame" x="8" y="100" width="377" height="88"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="88" id="hb4-c6-EXD"/>
+                        <constraint firstAttribute="height" constant="88" id="mSP-YW-IZP"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hIp-8v-eIN">
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="V7p-Yz-YfH">
                         <size key="itemSize" width="91" height="80"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
-                    <cells>
-                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="RU9-7I-V5J">
-                            <rect key="frame" x="0.0" y="4" width="91" height="80"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LWQ-Vy-8u3">
-                                <rect key="frame" x="0.0" y="0.0" width="91" height="80"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </collectionViewCellContentView>
-                            <size key="customSize" width="91" height="80"/>
-                        </collectionViewCell>
-                    </cells>
+                    <cells/>
                 </collectionView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="qRd-6y-u4p">
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
@@ -58,15 +47,15 @@
             <viewLayoutGuide key="safeArea" id="0Px-Mh-MdA"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="6nP-u3-8yF" firstAttribute="top" secondItem="fak-AR-oXM" secondAttribute="bottom" id="B0E-jv-grq"/>
                 <constraint firstAttribute="bottom" secondItem="6nP-u3-8yF" secondAttribute="bottom" constant="8" id="Gvo-bV-csK"/>
                 <constraint firstItem="0Px-Mh-MdA" firstAttribute="trailing" secondItem="6nP-u3-8yF" secondAttribute="trailing" id="SGh-Wy-FwA"/>
                 <constraint firstItem="qRd-6y-u4p" firstAttribute="centerX" secondItem="SLp-Te-qIG" secondAttribute="centerX" id="TBj-3E-m6i"/>
-                <constraint firstItem="tWF-Id-iEU" firstAttribute="top" secondItem="SLp-Te-qIG" secondAttribute="top" constant="100" id="W9K-jZ-A82"/>
-                <constraint firstItem="6nP-u3-8yF" firstAttribute="top" secondItem="tWF-Id-iEU" secondAttribute="bottom" id="WOy-h2-SXm"/>
+                <constraint firstItem="fak-AR-oXM" firstAttribute="leading" secondItem="SLp-Te-qIG" secondAttribute="leading" constant="8" id="Yes-UU-IIA"/>
+                <constraint firstItem="fak-AR-oXM" firstAttribute="top" secondItem="SLp-Te-qIG" secondAttribute="top" constant="100" id="dQs-XU-NdS"/>
                 <constraint firstItem="qRd-6y-u4p" firstAttribute="centerY" secondItem="SLp-Te-qIG" secondAttribute="centerY" id="fCV-wm-ddG"/>
                 <constraint firstItem="6nP-u3-8yF" firstAttribute="leading" secondItem="0Px-Mh-MdA" secondAttribute="leading" id="fFz-JX-Dnk"/>
-                <constraint firstItem="tWF-Id-iEU" firstAttribute="leading" secondItem="0Px-Mh-MdA" secondAttribute="leading" constant="8" id="jy8-Nt-hSX"/>
-                <constraint firstItem="0Px-Mh-MdA" firstAttribute="trailing" secondItem="tWF-Id-iEU" secondAttribute="trailing" constant="8" id="wke-Cv-qpo"/>
+                <constraint firstAttribute="trailing" secondItem="fak-AR-oXM" secondAttribute="trailing" constant="8" id="fQU-0l-NY3"/>
             </constraints>
             <point key="canvasLocation" x="-329" y="-52"/>
         </view>

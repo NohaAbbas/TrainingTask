@@ -45,6 +45,9 @@
 		BB6941C8298A5AA200CDAE72 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6941C6298A5AA200CDAE72 /* QuestionsViewController.swift */; };
 		BB6941C9298A5AA200CDAE72 /* QuestionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6941C7298A5AA200CDAE72 /* QuestionsViewController.xib */; };
 		BB6941CB298A5B7A00CDAE72 /* QuestionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */; };
+		BB6EA096298E816C000DC122 /* FiltersCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EA095298E816C000DC122 /* FiltersCollectionViewProtocol.swift */; };
+		BB6EA0A5298E83D8000DC122 /* FiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */; };
+		BB6EA0A7298E840E000DC122 /* FiltersCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6EA0A6298E840E000DC122 /* FiltersCollectionView.xib */; };
 		BB707195298131E2009EDCCD /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB707194298131E2009EDCCD /* ForYouViewController.swift */; };
 		BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8EA54C29893C16001454AA /* NavBarProtocol.swift */; };
 		BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */; };
@@ -120,6 +123,9 @@
 		BB6941C6298A5AA200CDAE72 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		BB6941C7298A5AA200CDAE72 /* QuestionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuestionsViewController.xib; sourceTree = "<group>"; };
 		BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsRouter.swift; sourceTree = "<group>"; };
+		BB6EA095298E816C000DC122 /* FiltersCollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewProtocol.swift; sourceTree = "<group>"; };
+		BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionView.swift; sourceTree = "<group>"; };
+		BB6EA0A6298E840E000DC122 /* FiltersCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersCollectionView.xib; sourceTree = "<group>"; };
 		BB707194298131E2009EDCCD /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		BB8EA54C29893C16001454AA /* NavBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarProtocol.swift; sourceTree = "<group>"; };
 		BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
@@ -385,11 +391,11 @@
 			children = (
 				BBE38BD42986CF7F0008E81A /* ApplicationFlow.swift */,
 				BB678F7C29892B070017D0DF /* NavigationBar */,
+				BBC703F3298BE496002CF1AA /* FiltersCollectionView */,
 				BBE38BD22986B7550008E81A /* ForYouScreen */,
 				BBE38BD32986B7660008E81A /* PostDetailsScreen */,
 				BB6941B9298A560300CDAE72 /* QuestionsScreen */,
 				BB684757297FE61C00145344 /* entity */,
-				BB68475D297FFBCA00145344 /* customViews */,
 				BB06F9F7298158B700E6EABC /* utils */,
 				BB684726297FE32900145344 /* AppDelegate.swift */,
 				BB684728297FE32900145344 /* SceneDelegate.swift */,
@@ -425,14 +431,6 @@
 				BB6941BA298A582700CDAE72 /* User.swift */,
 			);
 			path = entity;
-			sourceTree = "<group>";
-		};
-		BB68475D297FFBCA00145344 /* customViews */ = {
-			isa = PBXGroup;
-			children = (
-				BBFF2354298031BA0094E724 /* filtersCollectionViewCell */,
-			);
-			path = customViews;
 			sourceTree = "<group>";
 		};
 		BB6941B9298A560300CDAE72 /* QuestionsScreen */ = {
@@ -498,12 +496,47 @@
 			path = QuestionsVC;
 			sourceTree = "<group>";
 		};
+		BB6EA094298E8147000DC122 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB6EA095298E816C000DC122 /* FiltersCollectionViewProtocol.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		BB6EA097298E819C000DC122 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB6EA0A8298E85C3000DC122 /* collectionView */,
+				BBFF2354298031BA0094E724 /* collectionViewCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB6EA0A8298E85C3000DC122 /* collectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */,
+				BB6EA0A6298E840E000DC122 /* FiltersCollectionView.xib */,
+			);
+			path = collectionView;
+			sourceTree = "<group>";
+		};
 		BB8EA54B29893BFA001454AA /* protocol */ = {
 			isa = PBXGroup;
 			children = (
 				BB8EA54C29893C16001454AA /* NavBarProtocol.swift */,
 			);
 			path = protocol;
+			sourceTree = "<group>";
+		};
+		BBC703F3298BE496002CF1AA /* FiltersCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				BB6EA097298E819C000DC122 /* view */,
+				BB6EA094298E8147000DC122 /* protocol */,
+			);
+			path = FiltersCollectionView;
 			sourceTree = "<group>";
 		};
 		BBE38BD22986B7550008E81A /* ForYouScreen */ = {
@@ -530,13 +563,13 @@
 			path = PostDetailsScreen;
 			sourceTree = "<group>";
 		};
-		BBFF2354298031BA0094E724 /* filtersCollectionViewCell */ = {
+		BBFF2354298031BA0094E724 /* collectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				BBFF23592980329D0094E724 /* FiltersCollectionViewCell.swift */,
 				BBFF235A2980329D0094E724 /* FiltersCollectionViewCell.xib */,
 			);
-			path = filtersCollectionViewCell;
+			path = collectionViewCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -662,6 +695,7 @@
 				BB66EE58298A6BAF00B80C14 /* UsersCollectionViewCell.xib in Resources */,
 				BB684730297FE32C00145344 /* Assets.xcassets in Resources */,
 				BB68472E297FE32900145344 /* Main.storyboard in Resources */,
+				BB6EA0A7298E840E000DC122 /* FiltersCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -797,6 +831,7 @@
 				BB06FA10298176CB00E6EABC /* PostsRouter.swift in Sources */,
 				BB6941BB298A582700CDAE72 /* User.swift in Sources */,
 				BB6941C8298A5AA200CDAE72 /* QuestionsViewController.swift in Sources */,
+				BB6EA096298E816C000DC122 /* FiltersCollectionViewProtocol.swift in Sources */,
 				BB65C1112987ED4A00246226 /* PostDetailsRouter.swift in Sources */,
 				BB684727297FE32900145344 /* AppDelegate.swift in Sources */,
 				BBFF235B2980329D0094E724 /* FiltersCollectionViewCell.swift in Sources */,
@@ -806,6 +841,7 @@
 				BB6941CB298A5B7A00CDAE72 /* QuestionsRouter.swift in Sources */,
 				BBE38BD72986E0CE0008E81A /* NetworkUtils.swift in Sources */,
 				BB66EE57298A6BAF00B80C14 /* UsersCollectionViewCell.swift in Sources */,
+				BB6EA0A5298E83D8000DC122 /* FiltersCollectionView.swift in Sources */,
 				BB65C1132987EDD100246226 /* PostDetailsProtocol.swift in Sources */,
 				BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */,
 				BBE38BDB2986F9940008E81A /* FilteredPostsEntity.swift in Sources */,

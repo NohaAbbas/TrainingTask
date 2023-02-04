@@ -18,7 +18,6 @@ protocol ForYouViewToPresenterProtocol: AnyObject {
 protocol ForYouPresenterToViewProtocol: AnyObject {
     func hidePostsTable()
     func showPosts(posts: [Post])
-    func showFilters(filters: [String])
     func showError()
 }
 
