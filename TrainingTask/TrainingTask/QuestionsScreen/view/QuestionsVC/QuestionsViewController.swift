@@ -83,7 +83,10 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
     }
     
     func showError() {
-        print("Error fetching users")
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+        let alert = UIHelper.showErrorAlert(withTitle: Constants.ERROR_TITLE, andMessage: Constants.USERS_FETCHING_ERROR_MSG)
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

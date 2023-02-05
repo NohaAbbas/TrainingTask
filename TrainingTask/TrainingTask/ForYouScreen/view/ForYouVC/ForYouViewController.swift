@@ -77,7 +77,10 @@ extension ForYouViewController: ForYouPresenterToViewProtocol {
     }
     
     func showError() {
-        print("Error")
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
+        let alert = UIHelper.showErrorAlert(withTitle: Constants.ERROR_TITLE, andMessage: Constants.POSTS_FETCHING_ERROR_MSG)
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
