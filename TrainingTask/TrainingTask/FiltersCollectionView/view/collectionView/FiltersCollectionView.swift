@@ -9,7 +9,7 @@ import UIKit
 
 class FiltersCollectionView: UICollectionView {
 
-    var filters = Filters.allCases.map {$0.description}
+    var collectionArray = [String]()
     var selectedFilterPosition = 0
     
     var filtersDelegate: FiltersCollectionViewProtocol?
@@ -21,6 +21,10 @@ class FiltersCollectionView: UICollectionView {
         setupFiltersCollectionView()
     }
     
+    func configure(withArray arr: [String]) {
+        collectionArray = arr
+        reloadData()
+    }
 
     private func setupFiltersCollectionView() {
         register(UINib(nibName: FiltersCollectionViewCell.IDENTIFIER, bundle: nil), forCellWithReuseIdentifier: FiltersCollectionViewCell.IDENTIFIER)
@@ -32,12 +36,12 @@ class FiltersCollectionView: UICollectionView {
 
 extension FiltersCollectionView: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filters.count
+        return collectionArray.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FiltersCollectionViewCell.IDENTIFIER, for: indexPath) as! FiltersCollectionViewCell
-        cell.setup(with: filters[indexPath.item], at: indexPath.item, lastSelected: selectedFilterPosition)
+        cell.setup(with: collectionArray[indexPath.item], at: indexPath.item, lastSelected: selectedFilterPosition)
         
         return cell
     }

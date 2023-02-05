@@ -48,7 +48,6 @@
 		BB6941CB298A5B7A00CDAE72 /* QuestionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */; };
 		BB6EA096298E816C000DC122 /* FiltersCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EA095298E816C000DC122 /* FiltersCollectionViewProtocol.swift */; };
 		BB6EA0A5298E83D8000DC122 /* FiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */; };
-		BB6EA0A7298E840E000DC122 /* FiltersCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6EA0A6298E840E000DC122 /* FiltersCollectionView.xib */; };
 		BB707195298131E2009EDCCD /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB707194298131E2009EDCCD /* ForYouViewController.swift */; };
 		BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8EA54C29893C16001454AA /* NavBarProtocol.swift */; };
 		BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */; };
@@ -127,7 +126,6 @@
 		BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsRouter.swift; sourceTree = "<group>"; };
 		BB6EA095298E816C000DC122 /* FiltersCollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewProtocol.swift; sourceTree = "<group>"; };
 		BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionView.swift; sourceTree = "<group>"; };
-		BB6EA0A6298E840E000DC122 /* FiltersCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FiltersCollectionView.xib; sourceTree = "<group>"; };
 		BB707194298131E2009EDCCD /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		BB8EA54C29893C16001454AA /* NavBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarProtocol.swift; sourceTree = "<group>"; };
 		BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
@@ -520,7 +518,6 @@
 			isa = PBXGroup;
 			children = (
 				BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */,
-				BB6EA0A6298E840E000DC122 /* FiltersCollectionView.xib */,
 			);
 			path = collectionView;
 			sourceTree = "<group>";
@@ -698,7 +695,6 @@
 				BB66EE58298A6BAF00B80C14 /* UsersCollectionViewCell.xib in Resources */,
 				BB684730297FE32C00145344 /* Assets.xcassets in Resources */,
 				BB68472E297FE32900145344 /* Main.storyboard in Resources */,
-				BB6EA0A7298E840E000DC122 /* FiltersCollectionView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

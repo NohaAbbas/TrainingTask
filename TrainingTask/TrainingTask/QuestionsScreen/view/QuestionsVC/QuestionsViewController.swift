@@ -15,12 +15,14 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var users = [User]()
+    var filters = Filters.allCases.map {$0.description}
     var presenter: QuestionsViewToPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         presenter?.viewDidLoad()
+        filtersCollectionView.configure(withArray: filters)
         filtersCollectionView.filtersDelegate = self
         setupUsersCollectionView()
     }
