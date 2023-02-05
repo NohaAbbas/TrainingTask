@@ -38,6 +38,11 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
     func showAlert(error: String, view: QuestionsPresenterToViewProtocol) {
         router?.showAlert(error: error, view: view)
     }
+    
+    func showUserDetailsScreen(userAt userPosition: Int, withFilter filterPosition: Int) {
+        router?.navigateToUserDetailsScreen(user: filteredUsers[filterPosition].users[userPosition])
+    }
+    
 }
 
 extension QuestionsPresenter: QuestionsInteractorToPresenterProtocol {

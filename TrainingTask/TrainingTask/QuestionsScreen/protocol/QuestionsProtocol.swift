@@ -11,6 +11,7 @@ protocol QuestionsViewToPresenterProtocol : AnyObject {
     func viewDidLoad()
     func startFetchingUsers(of category: Int)
     func showAlert(error: String, view: QuestionsPresenterToViewProtocol)
+    func showUserDetailsScreen(userAt userPosition: Int, withFilter filterPosition: Int)
 }
 
 protocol QuestionsPresenterToViewProtocol: AnyObject {
@@ -30,4 +31,5 @@ protocol QuestionsInteractorToPresenterProtocol: AnyObject {
 
 protocol QuestionsPresenterToRouterProtocol {
     func showAlert(error: String, view: QuestionsPresenterToViewProtocol)
+    func navigateToUserDetailsScreen(user: User)
 }

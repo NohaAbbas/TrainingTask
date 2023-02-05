@@ -22,9 +22,11 @@ struct User: Codable {
 struct UserAvatars: Codable {
     var avatarSize24Url: String
     var avatarSize48Url: String
+    var avatarSize96Url: String
     
     enum CodingKeys: String, CodingKey {
         case avatarSize24Url = "24"
         case avatarSize48Url = "48"
+        case avatarSize96Url = "96"
     }
 }

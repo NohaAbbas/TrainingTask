@@ -12,7 +12,7 @@ class ApplicationFlow {
         let view = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "UITabBarController") as! UITabBarController
         view.viewControllers = [
             PostsRouter.createForYouScreen(with: navigationController),
-            QuestionsRouter.createQuestionsScreen()
+            QuestionsRouter.createQuestionsScreen(with: navigationController)
         ]
         return view
     }

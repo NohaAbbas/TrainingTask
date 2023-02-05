@@ -16,6 +16,7 @@ class QuestionsViewController: UIViewController {
     
     var users = [User]()
     var filters = Filters.allCases.map {$0.description}
+    var selectedFilterPosition = 0
     var presenter: QuestionsViewToPresenterProtocol?
     
     override func viewDidLoad() {
@@ -62,6 +63,9 @@ extension QuestionsViewController: UICollectionViewDataSource, UICollectionViewD
         
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.showUserDetailsScreen(userAt: indexPath.item, withFilter: selectedFilterPosition)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: collectionView.frame.width/2 - 10, height: 220.0)
@@ -96,5 +100,6 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
 extension QuestionsViewController: FiltersCollectionViewProtocol {
     func filterCellClicked(selectedFilterPosition: Int) {
         presenter?.startFetchingUsers(of: selectedFilterPosition)
+        self.selectedFilterPosition = selectedFilterPosition
     }
 }

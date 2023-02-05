@@ -49,6 +49,11 @@
 		BB6941CB298A5B7A00CDAE72 /* QuestionsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */; };
 		BB6EA096298E816C000DC122 /* FiltersCollectionViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EA095298E816C000DC122 /* FiltersCollectionViewProtocol.swift */; };
 		BB6EA0A5298E83D8000DC122 /* FiltersCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */; };
+		BB6F3D78298FE242008D73D6 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3D76298FE242008D73D6 /* UserDetailsViewController.swift */; };
+		BB6F3D79298FE242008D73D6 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB6F3D77298FE242008D73D6 /* UserDetailsViewController.xib */; };
+		BB6F3D7C298FE499008D73D6 /* UserDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3D7B298FE499008D73D6 /* UserDetailsRouter.swift */; };
+		BB6F3D7F298FE5B3008D73D6 /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3D7E298FE5B3008D73D6 /* UserDetailsPresenter.swift */; };
+		BB6F3D82298FE607008D73D6 /* UserDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3D81298FE607008D73D6 /* UserDetailsProtocol.swift */; };
 		BB707195298131E2009EDCCD /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB707194298131E2009EDCCD /* ForYouViewController.swift */; };
 		BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8EA54C29893C16001454AA /* NavBarProtocol.swift */; };
 		BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */; };
@@ -128,6 +133,11 @@
 		BB6941CA298A5B7A00CDAE72 /* QuestionsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsRouter.swift; sourceTree = "<group>"; };
 		BB6EA095298E816C000DC122 /* FiltersCollectionViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewProtocol.swift; sourceTree = "<group>"; };
 		BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersCollectionView.swift; sourceTree = "<group>"; };
+		BB6F3D76298FE242008D73D6 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
+		BB6F3D77298FE242008D73D6 /* UserDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
+		BB6F3D7B298FE499008D73D6 /* UserDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsRouter.swift; sourceTree = "<group>"; };
+		BB6F3D7E298FE5B3008D73D6 /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenter.swift; sourceTree = "<group>"; };
+		BB6F3D81298FE607008D73D6 /* UserDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsProtocol.swift; sourceTree = "<group>"; };
 		BB707194298131E2009EDCCD /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
 		BB8EA54C29893C16001454AA /* NavBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarProtocol.swift; sourceTree = "<group>"; };
 		BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
@@ -399,6 +409,7 @@
 				BBE38BD22986B7550008E81A /* ForYouScreen */,
 				BBE38BD32986B7660008E81A /* PostDetailsScreen */,
 				BB6941B9298A560300CDAE72 /* QuestionsScreen */,
+				BB6F3D74298FE201008D73D6 /* UserDetailsScreen */,
 				BB684757297FE61C00145344 /* entity */,
 				BB06F9F7298158B700E6EABC /* utils */,
 				BB684726297FE32900145344 /* AppDelegate.swift */,
@@ -523,6 +534,50 @@
 				BB6EA0A4298E83D8000DC122 /* FiltersCollectionView.swift */,
 			);
 			path = collectionView;
+			sourceTree = "<group>";
+		};
+		BB6F3D74298FE201008D73D6 /* UserDetailsScreen */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F3D75298FE210008D73D6 /* view */,
+				BB6F3D7D298FE59D008D73D6 /* presenter */,
+				BB6F3D7A298FE47E008D73D6 /* router */,
+				BB6F3D80298FE5E7008D73D6 /* protocol */,
+			);
+			path = UserDetailsScreen;
+			sourceTree = "<group>";
+		};
+		BB6F3D75298FE210008D73D6 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F3D76298FE242008D73D6 /* UserDetailsViewController.swift */,
+				BB6F3D77298FE242008D73D6 /* UserDetailsViewController.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB6F3D7A298FE47E008D73D6 /* router */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F3D7B298FE499008D73D6 /* UserDetailsRouter.swift */,
+			);
+			path = router;
+			sourceTree = "<group>";
+		};
+		BB6F3D7D298FE59D008D73D6 /* presenter */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F3D7E298FE5B3008D73D6 /* UserDetailsPresenter.swift */,
+			);
+			path = presenter;
+			sourceTree = "<group>";
+		};
+		BB6F3D80298FE5E7008D73D6 /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB6F3D81298FE607008D73D6 /* UserDetailsProtocol.swift */,
+			);
+			path = protocol;
 			sourceTree = "<group>";
 		};
 		BB8EA54B29893BFA001454AA /* protocol */ = {
@@ -689,6 +744,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */,
+				BB6F3D79298FE242008D73D6 /* UserDetailsViewController.xib in Resources */,
 				BB65C10F2987ECE500246226 /* PostDetailsViewController.xib in Resources */,
 				BB684733297FE32C00145344 /* LaunchScreen.storyboard in Resources */,
 				BBE38BD92986EA3E0008E81A /* ForYouViewController.xib in Resources */,
@@ -831,17 +887,20 @@
 				BB66EE4B298A631100B80C14 /* QuestionsPresenter.swift in Sources */,
 				BB66EE5A298A945B00B80C14 /* FilteredUsers.swift in Sources */,
 				BB06FA10298176CB00E6EABC /* PostsRouter.swift in Sources */,
+				BB6F3D78298FE242008D73D6 /* UserDetailsViewController.swift in Sources */,
 				BB6941BB298A582700CDAE72 /* User.swift in Sources */,
 				BB6941C8298A5AA200CDAE72 /* QuestionsViewController.swift in Sources */,
 				BB6EA096298E816C000DC122 /* FiltersCollectionViewProtocol.swift in Sources */,
 				BB65C1112987ED4A00246226 /* PostDetailsRouter.swift in Sources */,
 				BB684727297FE32900145344 /* AppDelegate.swift in Sources */,
+				BB6F3D7C298FE499008D73D6 /* UserDetailsRouter.swift in Sources */,
 				BBFF235B2980329D0094E724 /* FiltersCollectionViewCell.swift in Sources */,
 				BB06FA0C29816FEC00E6EABC /* PostsPresenter.swift in Sources */,
 				BB664581298F9D9D000FFF81 /* UIHelper.swift in Sources */,
 				BB06F9FF29815E8A00E6EABC /* PostTableViewCell.swift in Sources */,
 				BBE38BD52986CF7F0008E81A /* ApplicationFlow.swift in Sources */,
 				BB6941CB298A5B7A00CDAE72 /* QuestionsRouter.swift in Sources */,
+				BB6F3D82298FE607008D73D6 /* UserDetailsProtocol.swift in Sources */,
 				BBE38BD72986E0CE0008E81A /* NetworkUtils.swift in Sources */,
 				BB66EE57298A6BAF00B80C14 /* UsersCollectionViewCell.swift in Sources */,
 				BB6EA0A5298E83D8000DC122 /* FiltersCollectionView.swift in Sources */,
@@ -854,6 +913,7 @@
 				BB672F76298676FD00CDE37A /* PostDetailsViewController.swift in Sources */,
 				BB06F9F9298158CE00E6EABC /* Enums.swift in Sources */,
 				BB678F8129892C4D0017D0DF /* NavBarRouter.swift in Sources */,
+				BB6F3D7F298FE5B3008D73D6 /* UserDetailsPresenter.swift in Sources */,
 				BB66EE5C298AB22700B80C14 /* QuestionsInteractor.swift in Sources */,
 				BB06F9FB29815DCE00E6EABC /* Post.swift in Sources */,
 				BB66458A298FD0D4000FFF81 /* CellEnums.swift in Sources */,
