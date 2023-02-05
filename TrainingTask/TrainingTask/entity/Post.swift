@@ -15,8 +15,8 @@ struct Post: Codable {
     var categories: [Category]
     var date: String
     var formattedDate: String? {
-        date.getDateAsString(from: DateInputFormat.FULL_DATE_TIME.rawValue,
-                             to: DateDesiredFormat.MONTH_DAY_YEAR.rawValue)
+        date.getDateAsString(from: DateFormat.FULL_DATE_TIME.rawValue,
+                             to: DateFormat.MONTH_DAY_YEAR.rawValue)
     }
     
     enum CodingKeys: String, CodingKey {
