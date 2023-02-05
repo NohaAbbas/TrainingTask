@@ -10,11 +10,10 @@ import Alamofire
 
 class PostsInteractor: ForYouPresenterToInteractorProtocol {
     weak var presenter: ForYouInteractorToPresenterProtocol?
-    let ALL_FILTER_POSITION = 0
     
     func fetchPosts(of category: Int, filter filterPosition : Int) {
         var urlString = Constants.POSTS_URL
-        if category != ALL_FILTER_POSITION {
+        if category != Filters.ALL.rawValue {
             urlString.append("&categories=\(category)")
         }
         
@@ -22,7 +21,7 @@ class PostsInteractor: ForYouPresenterToInteractorProtocol {
             if let result {
                 self.presenter?.postsFetchingSuccess(posts: result, of: filterPosition)
             } else {
-                self.presenter?.postsFetchingFailure()
+                self.presenter?.postsFetchingFailure(error: error ?? Constants.POSTS_FETCHING_ERROR_MSG)
             }
         }
     }

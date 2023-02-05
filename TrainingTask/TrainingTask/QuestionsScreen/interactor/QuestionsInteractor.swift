@@ -12,7 +12,7 @@ class QuestionsInteractor: QuestionsPresenterToInteractorProtocol {
     
     func fetchUsers(of category: Int, at filterPosition: Int) {
         var url = Constants.USERS_URL
-        if category != 0 {
+        if category != Filters.ALL.rawValue {
             url.append("?categories=\(category)")
         }
         
@@ -20,7 +20,7 @@ class QuestionsInteractor: QuestionsPresenterToInteractorProtocol {
             if let result {
                 self?.presenter?.usersFetchingSucceeded(users: result, at: filterPosition)
             } else {
-                self?.presenter?.usersFetchingFailed()
+                self?.presenter?.usersFetchingFailed(error: error ?? Constants.USERS_FETCHING_ERROR_MSG)
             }
         }
     }

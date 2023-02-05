@@ -15,7 +15,6 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
     
     let filtersIDs = Filters.allCases.map { $0.rawValue }
     var filteredPostsList = [FilteredPosts]()
-    let ALL_FILTER_POSITION = 0
     
     init() {
         for filter in Filters.allCases {
@@ -24,7 +23,7 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
     }
     
     func viewDidLoad() {
-        startFetchingPosts(atPosition: ALL_FILTER_POSITION)
+        startFetchingPosts(atPosition: Filters.ALL.rawValue)
     }
     
     func startFetchingPosts(atPosition position: Int) {
@@ -41,6 +40,14 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
         router?.navigateToPostDetailsScreen(post: filteredPostsList[filterPosition].posts[postPosition])
     }
     
+    func hidePostsTable() {
+        view?.hidePostsTable()
+    }
+    
+    func showAlert(error: String, view: ForYouPresenterToViewProtocol) {
+        router?.showAlertWithErrorMessage(error: error, view: view)
+    }
+    
 }
 
 extension PostsPresenter: ForYouInteractorToPresenterProtocol {
@@ -50,12 +57,8 @@ extension PostsPresenter: ForYouInteractorToPresenterProtocol {
         view?.showPosts(posts: posts)
     }
     
-    func postsFetchingFailure() {
-        view?.showError()
-    }
-    
-    func hidePostsTable() {
-        view?.hidePostsTable()
+    func postsFetchingFailure(error: String) {
+        view?.showError(error: error)
     }
     
 }

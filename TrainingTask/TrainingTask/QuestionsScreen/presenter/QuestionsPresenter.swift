@@ -11,10 +11,10 @@ import UIKit
 class QuestionsPresenter: QuestionsViewToPresenterProtocol {
     weak var view: QuestionsPresenterToViewProtocol?
     var interactor: QuestionsPresenterToInteractorProtocol?
+    var router: QuestionsPresenterToRouterProtocol?
     
     let filtersIDs = Filters.allCases.map { $0.rawValue }
     var filteredUsers = [FilteredUsers]()
-    let ALL_FILTER_POSITION = 0
     
     init() {
         for filter in Filters.allCases {
@@ -23,7 +23,7 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
     }
     
     func viewDidLoad() {
-        startFetchingUsers(of: ALL_FILTER_POSITION)
+        startFetchingUsers(of: Filters.ALL.rawValue)
     }
     
     func startFetchingUsers(of category: Int) {
@@ -35,6 +35,9 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
         interactor?.fetchUsers(of: filtersIDs[category], at: category)
     }
     
+    func showAlert(error: String, view: QuestionsPresenterToViewProtocol) {
+        router?.showAlert(error: error, view: view)
+    }
 }
 
 extension QuestionsPresenter: QuestionsInteractorToPresenterProtocol {
@@ -43,8 +46,8 @@ extension QuestionsPresenter: QuestionsInteractorToPresenterProtocol {
         view?.showUsers(users: users)
     }
     
-    func usersFetchingFailed() {
-        view?.showError()
+    func usersFetchingFailed(error: String) {
+        view?.showError(error: error)
     }
     
 }

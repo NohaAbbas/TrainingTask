@@ -36,4 +36,8 @@ class PostsRouter : ForYouPresenterToRouterProtocol {
         navigationController?.pushViewController(postDetailsVC, animated: true)
     }
     
+    func showAlertWithErrorMessage(error: String, view: ForYouPresenterToViewProtocol) {
+        let alert = UIHelper.showErrorAlert(withTitle: Constants.ERROR_TITLE, andMessage: error)
+        (view as? ForYouViewController)?.present(alert, animated: true, completion: nil)
+    }
 }

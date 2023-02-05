@@ -13,16 +13,18 @@ protocol ForYouViewToPresenterProtocol: AnyObject {
     func startFetchingPosts(atPosition position: Int)
     func hidePostsTable()
     func showPostDetailsViewController(postAt postPosition: Int, filter filterPosition: Int)
+    func showAlert(error: String, view: ForYouPresenterToViewProtocol)
 }
 
 protocol ForYouPresenterToViewProtocol: AnyObject {
     func hidePostsTable()
     func showPosts(posts: [Post])
-    func showError()
+    func showError(error: String)
 }
 
 protocol ForYouPresenterToRouterProtocol {
     func navigateToPostDetailsScreen(post: Post)
+    func showAlertWithErrorMessage(error: String, view: ForYouPresenterToViewProtocol)
 }
 
 protocol ForYouPresenterToInteractorProtocol: AnyObject {
@@ -32,5 +34,5 @@ protocol ForYouPresenterToInteractorProtocol: AnyObject {
 
 protocol ForYouInteractorToPresenterProtocol: AnyObject {
     func postsFetchingSuccess(posts: [Post], of filter: Int)
-    func postsFetchingFailure()
+    func postsFetchingFailure(error: String)
 }

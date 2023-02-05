@@ -84,11 +84,10 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
         showUsersCollectionView()
     }
     
-    func showError() {
+    func showError(error: String) {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
-        let alert = UIHelper.showErrorAlert(withTitle: Constants.ERROR_TITLE, andMessage: Constants.USERS_FETCHING_ERROR_MSG)
-        self.present(alert, animated: true, completion: nil)
+        presenter?.showAlert(error: error, view: self)
     }
     
 }

@@ -8,7 +8,7 @@
 import Foundation
 
 enum Filters : Int, CustomStringConvertible, CaseIterable {
-    case ALL
+    case ALL = 0
     case BABY = 6
     case TODDLER_AND_CHILD = 25
     case MUMZ = 5

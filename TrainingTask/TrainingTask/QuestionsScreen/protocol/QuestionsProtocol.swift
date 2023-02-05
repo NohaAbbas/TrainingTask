@@ -10,12 +10,13 @@ import Foundation
 protocol QuestionsViewToPresenterProtocol : AnyObject {
     func viewDidLoad()
     func startFetchingUsers(of category: Int)
+    func showAlert(error: String, view: QuestionsPresenterToViewProtocol)
 }
 
 protocol QuestionsPresenterToViewProtocol: AnyObject {
     func hideCollectionView()
     func showUsers(users: [User])
-    func showError()
+    func showError(error: String)
 }
 
 protocol QuestionsPresenterToInteractorProtocol: AnyObject {
@@ -24,5 +25,9 @@ protocol QuestionsPresenterToInteractorProtocol: AnyObject {
 
 protocol QuestionsInteractorToPresenterProtocol: AnyObject {
     func usersFetchingSucceeded(users: [User], at filterPosition: Int)
-    func usersFetchingFailed()
+    func usersFetchingFailed(error: String)
+}
+
+protocol QuestionsPresenterToRouterProtocol {
+    func showAlert(error: String, view: QuestionsPresenterToViewProtocol)
 }
