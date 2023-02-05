@@ -23,6 +23,7 @@
 		BB65C1112987ED4A00246226 /* PostDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */; };
 		BB65C1132987EDD100246226 /* PostDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */; };
 		BB664581298F9D9D000FFF81 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB664580298F9D9D000FFF81 /* UIHelper.swift */; };
+		BB66458A298FD0D4000FFF81 /* CellEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB664589298FD0D4000FFF81 /* CellEnums.swift */; };
 		BB66EE4B298A631100B80C14 /* QuestionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE4A298A631100B80C14 /* QuestionsPresenter.swift */; };
 		BB66EE4D298A636B00B80C14 /* QuestionsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE4C298A636B00B80C14 /* QuestionsProtocol.swift */; };
 		BB66EE57298A6BAF00B80C14 /* UsersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB66EE55298A6BAF00B80C14 /* UsersCollectionViewCell.swift */; };
@@ -97,6 +98,7 @@
 		BB65C1102987ED4A00246226 /* PostDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsRouter.swift; sourceTree = "<group>"; };
 		BB65C1122987EDD100246226 /* PostDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailsProtocol.swift; sourceTree = "<group>"; };
 		BB664580298F9D9D000FFF81 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
+		BB664589298FD0D4000FFF81 /* CellEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellEnums.swift; sourceTree = "<group>"; };
 		BB66EE4A298A631100B80C14 /* QuestionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsPresenter.swift; sourceTree = "<group>"; };
 		BB66EE4C298A636B00B80C14 /* QuestionsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsProtocol.swift; sourceTree = "<group>"; };
 		BB66EE55298A6BAF00B80C14 /* UsersCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				BB66EE59298A945B00B80C14 /* FilteredUsers.swift */,
+				BB664589298FD0D4000FFF81 /* CellEnums.swift */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				BB678F8129892C4D0017D0DF /* NavBarRouter.swift in Sources */,
 				BB66EE5C298AB22700B80C14 /* QuestionsInteractor.swift in Sources */,
 				BB06F9FB29815DCE00E6EABC /* Post.swift in Sources */,
+				BB66458A298FD0D4000FFF81 /* CellEnums.swift in Sources */,
 				BB678F6D2988FDA50017D0DF /* Helper.swift in Sources */,
 				BB678F7B298929BA0017D0DF /* PostDetailsPresenter.swift in Sources */,
 				BB684729297FE32900145344 /* SceneDelegate.swift in Sources */,
