@@ -80,10 +80,9 @@ extension ForYouViewController: ForYouPresenterToViewProtocol {
         showTableView()
     }
     
-    func showError(error: String) {
+    func showError() {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
-        presenter?.showAlert(error: error, view: self)
     }
 }
 

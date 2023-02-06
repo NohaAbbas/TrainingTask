@@ -41,8 +41,8 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
         interactor?.fetchUsers(of: filtersIDs[category], at: category)
     }
     
-    func showAlert(error: String, view: QuestionsPresenterToViewProtocol) {
-        router?.showAlert(error: error, view: view)
+    func showAlert(error: String) {
+        router?.showAlert(error: error)
     }
     
     func showUserDetailsScreen(userAt userPosition: Int, withFilter filterPosition: Int) {
@@ -58,7 +58,8 @@ extension QuestionsPresenter: QuestionsInteractorToPresenterProtocol {
     }
     
     func usersFetchingFailed(error: String) {
-        view?.showError(error: error)
+        view?.showError()
+        showAlert(error: error)
     }
     
 }

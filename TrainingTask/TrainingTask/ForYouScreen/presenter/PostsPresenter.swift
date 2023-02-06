@@ -50,8 +50,8 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
         view?.hidePostsTable()
     }
     
-    func showAlert(error: String, view: ForYouPresenterToViewProtocol) {
-        router?.showAlertWithErrorMessage(error: error, view: view)
+    func showAlert(error: String) {
+        router?.showAlertWithErrorMessage(error: error)
     }
     
 }
@@ -64,7 +64,8 @@ extension PostsPresenter: ForYouInteractorToPresenterProtocol {
     }
     
     func postsFetchingFailure(error: String) {
-        view?.showError(error: error)
+        view?.showError()
+        showAlert(error: error)
     }
     
 }

@@ -11,7 +11,7 @@ protocol QuestionsViewToPresenterProtocol : AnyObject {
     func viewDidLoad()
     func prepareFiltersList()
     func startFetchingUsers(of category: Int)
-    func showAlert(error: String, view: QuestionsPresenterToViewProtocol)
+    func showAlert(error: String)
     func showUserDetailsScreen(userAt userPosition: Int, withFilter filterPosition: Int)
 }
 
@@ -19,7 +19,7 @@ protocol QuestionsPresenterToViewProtocol: AnyObject {
     func hideCollectionView()
     func showFilters(filters: [String])
     func showUsers(users: [User])
-    func showError(error: String)
+    func showError()
 }
 
 protocol QuestionsPresenterToInteractorProtocol: AnyObject {
@@ -32,6 +32,6 @@ protocol QuestionsInteractorToPresenterProtocol: AnyObject {
 }
 
 protocol QuestionsPresenterToRouterProtocol {
-    func showAlert(error: String, view: QuestionsPresenterToViewProtocol)
+    func showAlert(error: String)
     func navigateToUserDetailsScreen(user: User)
 }

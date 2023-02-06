@@ -14,23 +14,22 @@ protocol ForYouViewToPresenterProtocol: AnyObject {
     func startFetchingPosts(atPosition position: Int)
     func hidePostsTable()
     func showPostDetailsViewController(postAt postPosition: Int, filter filterPosition: Int)
-    func showAlert(error: String, view: ForYouPresenterToViewProtocol)
+    func showAlert(error: String)
 }
 
 protocol ForYouPresenterToViewProtocol: AnyObject {
     func hidePostsTable()
     func showFilters(filters: [String])
     func showPosts(posts: [Post])
-    func showError(error: String)
+    func showError()
 }
 
 protocol ForYouPresenterToRouterProtocol {
     func navigateToPostDetailsScreen(post: Post)
-    func showAlertWithErrorMessage(error: String, view: ForYouPresenterToViewProtocol)
+    func showAlertWithErrorMessage(error: String)
 }
 
 protocol ForYouPresenterToInteractorProtocol: AnyObject {
-    var presenter: ForYouInteractorToPresenterProtocol? { get set }
     func fetchPosts(of category: Int, filter filterPosition: Int)
 }
 

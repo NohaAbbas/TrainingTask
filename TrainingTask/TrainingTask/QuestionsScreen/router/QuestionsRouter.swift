@@ -34,9 +34,9 @@ class QuestionsRouter: QuestionsPresenterToRouterProtocol {
         return view
     }
     
-    func showAlert(error: String, view: QuestionsPresenterToViewProtocol) {
+    func showAlert(error: String) {
         let alert = UIHelper.showErrorAlert(withTitle: Constants.ERROR_TITLE, andMessage: error)
-        (view as? QuestionsViewController)?.present(alert, animated: true, completion: nil)
+        navigationController?.present(alert, animated: true, completion: nil)
     }
     
     func navigateToUserDetailsScreen(user: User) {
