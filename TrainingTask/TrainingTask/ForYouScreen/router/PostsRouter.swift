@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class PostsRouter : ForYouPresenterToRouterProtocol {
+class PostsRouter {
     var navigationController: UINavigationController?
     
     static func createForYouScreen(with navigationController: UINavigationController) -> ForYouViewController{
@@ -30,6 +30,9 @@ class PostsRouter : ForYouPresenterToRouterProtocol {
         
         return view
     }
+}
+
+extension PostsRouter: ForYouPresenterToRouterProtocol {
     
     func navigateToPostDetailsScreen(post: Post) {
         let postDetailsVC = PostDetailsRouter().createPostDetailsScreen(with: post)
@@ -40,4 +43,5 @@ class PostsRouter : ForYouPresenterToRouterProtocol {
         let alert = UIHelper.showErrorAlert(withTitle: Constants.ERROR_TITLE, andMessage: error)
         navigationController?.present(alert, animated: true, completion: nil)
     }
+    
 }

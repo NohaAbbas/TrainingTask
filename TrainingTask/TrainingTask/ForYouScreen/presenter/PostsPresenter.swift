@@ -8,7 +8,8 @@
 import UIKit
 
 
-class PostsPresenter : ForYouViewToPresenterProtocol {
+class PostsPresenter {
+    
     weak var view: ForYouPresenterToViewProtocol?
     var interactor: ForYouPresenterToInteractorProtocol?
     var router: ForYouPresenterToRouterProtocol?
@@ -22,6 +23,9 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
         }
     }
     
+}
+
+extension PostsPresenter: ForYouViewToPresenterProtocol {
     func viewDidLoad() {
         startFetchingPosts(atPosition: Filters.ALL.rawValue)
         prepareFiltersList()
@@ -53,7 +57,6 @@ class PostsPresenter : ForYouViewToPresenterProtocol {
     func showAlert(error: String) {
         router?.showAlertWithErrorMessage(error: error)
     }
-    
 }
 
 extension PostsPresenter: ForYouInteractorToPresenterProtocol {
