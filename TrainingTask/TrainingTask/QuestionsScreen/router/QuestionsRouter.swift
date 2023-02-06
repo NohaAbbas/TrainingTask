@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class QuestionsRouter: QuestionsPresenterToRouterProtocol {
+class QuestionsRouter {
     
     var navigationController: UINavigationController?
     
@@ -33,6 +33,10 @@ class QuestionsRouter: QuestionsPresenterToRouterProtocol {
         
         return view
     }
+
+}
+
+extension QuestionsRouter: QuestionsPresenterToRouterProtocol {
     
     func showAlert(error: String) {
         let alert = UIHelper.showErrorAlert(withTitle: Constants.ERROR_TITLE, andMessage: error)
@@ -44,4 +48,5 @@ class QuestionsRouter: QuestionsPresenterToRouterProtocol {
             UserDetailsRouter().createUserDetailsScreen(withUser: user),
             animated: true)
      }
+    
 }

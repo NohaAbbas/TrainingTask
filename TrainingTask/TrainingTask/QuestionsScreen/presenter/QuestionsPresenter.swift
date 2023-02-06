@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class QuestionsPresenter: QuestionsViewToPresenterProtocol {
+class QuestionsPresenter {
     weak var view: QuestionsPresenterToViewProtocol?
     var interactor: QuestionsPresenterToInteractorProtocol?
     var router: QuestionsPresenterToRouterProtocol?
@@ -21,6 +21,10 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
             filteredUsers.append(FilteredUsers(filterName: filter.description, users: []))
         }
     }
+    
+}
+
+extension QuestionsPresenter: QuestionsViewToPresenterProtocol {
     
     func viewDidLoad() {
         startFetchingUsers(of: Filters.ALL.rawValue)
