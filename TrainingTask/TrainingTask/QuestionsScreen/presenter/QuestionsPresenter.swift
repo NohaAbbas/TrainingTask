@@ -24,6 +24,12 @@ class QuestionsPresenter: QuestionsViewToPresenterProtocol {
     
     func viewDidLoad() {
         startFetchingUsers(of: Filters.ALL.rawValue)
+        prepareFiltersList()
+    }
+    
+    func prepareFiltersList() {
+        let filters = Filters.allCases.map {$0.description}
+        view?.showFilters(filters: filters)
     }
     
     func startFetchingUsers(of category: Int) {

@@ -17,15 +17,12 @@ class ForYouViewController: UIViewController {
     
     var presenter: ForYouViewToPresenterProtocol?
     var posts = [Post]()
-    var filters = Filters.allCases.map {$0.description}
     var selectedFilterPosition = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupPostsTableView()
-        filtersCollectionView.configure(withArray: filters)
-        filtersCollectionView.filtersDelegate = self
         presenter?.viewDidLoad()
     }
 
@@ -71,6 +68,11 @@ extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
 extension ForYouViewController: ForYouPresenterToViewProtocol {
     func hidePostsTable() {
         hideTableView()
+    }
+    
+    func showFilters(filters: [String]) {
+        filtersCollectionView.configure(withArray: filters)
+        filtersCollectionView.filtersDelegate = self
     }
     
     func showPosts(posts: [Post]) {

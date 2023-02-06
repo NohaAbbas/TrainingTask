@@ -10,6 +10,7 @@ import UIKit
 
 protocol ForYouViewToPresenterProtocol: AnyObject {
     func viewDidLoad()
+    func prepareFiltersList()
     func startFetchingPosts(atPosition position: Int)
     func hidePostsTable()
     func showPostDetailsViewController(postAt postPosition: Int, filter filterPosition: Int)
@@ -18,6 +19,7 @@ protocol ForYouViewToPresenterProtocol: AnyObject {
 
 protocol ForYouPresenterToViewProtocol: AnyObject {
     func hidePostsTable()
+    func showFilters(filters: [String])
     func showPosts(posts: [Post])
     func showError(error: String)
 }

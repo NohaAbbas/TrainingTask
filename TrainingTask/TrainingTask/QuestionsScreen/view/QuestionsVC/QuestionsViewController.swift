@@ -15,7 +15,6 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var users = [User]()
-    var filters = Filters.allCases.map {$0.description}
     var selectedFilterPosition = 0
     var presenter: QuestionsViewToPresenterProtocol?
     
@@ -23,8 +22,6 @@ class QuestionsViewController: UIViewController {
         super.viewDidLoad()
         
         presenter?.viewDidLoad()
-        filtersCollectionView.configure(withArray: filters)
-        filtersCollectionView.filtersDelegate = self
         setupUsersCollectionView()
     }
     
@@ -81,6 +78,11 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
     
     func hideCollectionView(){
         hideUsersCollectionView()
+    }
+
+    func showFilters(filters: [String]) {
+        filtersCollectionView.configure(withArray: filters)
+        filtersCollectionView.filtersDelegate = self
     }
     
     func showUsers(users: [User]) {
