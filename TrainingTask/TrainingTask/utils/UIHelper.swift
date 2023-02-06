@@ -18,21 +18,21 @@ class UIHelper {
         return alert
     }
     
-    static func roundTopLeftAndBottomRightCorners(view: UIView) {
+    static func roundTopLeftAndBottomRightCorners(view: UIView, cornerRadius: CGFloat) {
         view.clipsToBounds = true
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = cornerRadius
         view.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
     }
     
-    static func roundTopRightAndBottomRightCorners(view: UIView) {
+    static func roundTopRightAndBottomRightCorners(view: UIView, cornerRadius: CGFloat) {
         view.clipsToBounds = true
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = cornerRadius
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMaxXMaxYCorner]
     }
     
-    static func roundTopRightAndBottomLeftCorners(view: UIView) {
+    static func roundTopRightAndBottomLeftCorners(view: UIView, cornerRadius: CGFloat) {
         view.clipsToBounds = true
-        view.layer.cornerRadius = 30
+        view.layer.cornerRadius = cornerRadius
         view.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMaxYCorner]
     }
 }

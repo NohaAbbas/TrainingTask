@@ -51,9 +51,9 @@ enum CellType: Int {
         }
     }
     
-    func configureCell(forView view: UIView) {
+    func configureCell(forView view: UIView, cornerRadius: CGFloat) {
         view.backgroundColor = color
-        cornerStyle.styleCell(view: view)
+        cornerStyle.styleCell(view: view, cornerRadius: cornerRadius)
     }
 
 }
@@ -64,14 +64,14 @@ enum CellCorners {
     case TopRightBottomLeft
     case None
     
-    func styleCell(view: UIView) {
+    func styleCell(view: UIView, cornerRadius: CGFloat) {
         switch self {
         case .TopLeftBottomRight:
-            UIHelper.roundTopLeftAndBottomRightCorners(view: view)
+            UIHelper.roundTopLeftAndBottomRightCorners(view: view, cornerRadius: cornerRadius)
         case .TopRightBottomRight:
-            UIHelper.roundTopRightAndBottomRightCorners(view: view)
+            UIHelper.roundTopRightAndBottomRightCorners(view: view, cornerRadius: cornerRadius)
         case .TopRightBottomLeft:
-            UIHelper.roundTopRightAndBottomLeftCorners(view: view)
+            UIHelper.roundTopRightAndBottomLeftCorners(view: view, cornerRadius: cornerRadius)
         case .None:
             return
         }

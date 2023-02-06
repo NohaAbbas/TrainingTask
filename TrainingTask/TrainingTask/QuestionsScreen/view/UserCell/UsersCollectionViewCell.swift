@@ -28,7 +28,7 @@ class UsersCollectionViewCell: UICollectionViewCell {
     func setupCell(at position: Int, with user: User) {
         let cellType: Int = position % 6
         let type = CellType(rawValue: cellType)
-        type?.configureCell(forView: self)
+        type?.configureCell(forView: self, cornerRadius: 30)
         
         userNameLabel.text = user.name
         userImage.sd_setImage(with: URL(string: user.imageUrl.avatarSize48Url))
