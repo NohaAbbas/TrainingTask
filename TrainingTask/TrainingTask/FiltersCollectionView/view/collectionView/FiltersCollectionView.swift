@@ -21,8 +21,8 @@ class FiltersCollectionView: UICollectionView {
         setupFiltersCollectionView()
     }
     
-    func configure(withArray arr: [String]) {
-        collectionArray = arr
+    func configureWith(array: [String]) {
+        collectionArray = array
         reloadData()
     }
 

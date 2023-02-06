@@ -71,7 +71,7 @@ extension ForYouViewController: ForYouPresenterToViewProtocol {
     }
     
     func showFilters(filters: [String]) {
-        filtersCollectionView.configure(withArray: filters)
+        filtersCollectionView.configureWith(array: filters)
         filtersCollectionView.filtersDelegate = self
     }
     

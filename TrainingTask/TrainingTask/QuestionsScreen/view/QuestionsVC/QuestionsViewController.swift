@@ -81,7 +81,7 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
     }
 
     func showFilters(filters: [String]) {
-        filtersCollectionView.configure(withArray: filters)
+        filtersCollectionView.configureWith(array: filters)
         filtersCollectionView.filtersDelegate = self
     }
     
