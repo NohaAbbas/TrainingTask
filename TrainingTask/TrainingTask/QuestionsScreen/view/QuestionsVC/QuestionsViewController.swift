@@ -10,19 +10,33 @@ import UIKit
 class QuestionsViewController: UIViewController {
     static let IDENTIFIER = "QuestionsViewController"
     
-    @IBOutlet weak var filtersCollectionView: FiltersCollectionView!
+    @IBOutlet weak var filtersContainer: UIView!
     @IBOutlet weak var usersCollectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var users = [User]()
     var selectedFilterPosition = 0
     var presenter: QuestionsViewToPresenterProtocol?
+    var filtersCollectionView: FiltersCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        presenter?.viewDidLoad()
+        setupFiltersCollectionView()
         setupUsersCollectionView()
+        presenter?.viewDidLoad()
+    }
+    
+    private func setupFiltersCollectionView() {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = CGSize(width: 100, height: 88)
+        layout.scrollDirection = .horizontal
+        
+        filtersCollectionView = FiltersCollectionView(frame: CGRect(x: 0, y: 0, width: filtersContainer.frame.width, height: 88), collectionViewLayout: layout)
+        filtersCollectionView?.showsHorizontalScrollIndicator = false
+        filtersCollectionView?.filtersDelegate = self
+    
+        filtersContainer.addSubview(filtersCollectionView!)
     }
     
     private func setupUsersCollectionView() {
@@ -81,8 +95,7 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
     }
 
     func showFilters(filters: [String]) {
-        filtersCollectionView.configureWith(array: filters)
-        filtersCollectionView.filtersDelegate = self
+        filtersCollectionView?.configureWith(array: filters)
     }
     
     func showUsers(users: [User]) {

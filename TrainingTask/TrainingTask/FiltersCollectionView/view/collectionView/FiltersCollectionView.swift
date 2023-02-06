@@ -14,11 +14,14 @@ class FiltersCollectionView: UICollectionView {
     
     var filtersDelegate: FiltersCollectionViewProtocol?
 
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
+        super.init(frame: frame, collectionViewLayout: layout)
         
         setupFiltersCollectionView()
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
     func configureWith(array: [String]) {

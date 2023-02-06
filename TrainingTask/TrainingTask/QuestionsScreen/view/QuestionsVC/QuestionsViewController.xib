@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionsViewController" customModule="TrainingTask" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="P7L-Wi-JS1" id="9kt-U9-RU9"/>
-                <outlet property="filtersCollectionView" destination="TQf-bS-mUg" id="84q-lP-asn"/>
+                <outlet property="filtersContainer" destination="M25-Ng-Sbt" id="bKs-ep-jmT"/>
                 <outlet property="usersCollectionView" destination="6UQ-Gl-vNc" id="rXb-SY-tz5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -22,19 +22,13 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="TQf-bS-mUg" customClass="FiltersCollectionView" customModule="TrainingTask" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M25-Ng-Sbt" userLabel="Filters Container">
                     <rect key="frame" x="8" y="100" width="377" height="88"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="88" id="Gqb-Qw-jkv"/>
+                        <constraint firstAttribute="height" constant="88" id="g08-ks-LmF"/>
                     </constraints>
-                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vB4-UF-MCa">
-                        <size key="itemSize" width="91" height="80"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                </view>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="P7L-Wi-JS1">
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                 </activityIndicatorView>
@@ -54,13 +48,13 @@
             <constraints>
                 <constraint firstItem="P7L-Wi-JS1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Yo-QD-c8Q"/>
                 <constraint firstItem="6UQ-Gl-vNc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="AO9-wr-mm2"/>
-                <constraint firstItem="TQf-bS-mUg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="B8x-O9-rNx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6UQ-Gl-vNc" secondAttribute="trailing" constant="8" id="CRk-hA-4hH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6UQ-Gl-vNc" secondAttribute="bottom" constant="8" id="IwU-2I-rOS"/>
-                <constraint firstItem="6UQ-Gl-vNc" firstAttribute="top" secondItem="TQf-bS-mUg" secondAttribute="bottom" id="NBv-EM-0ng"/>
-                <constraint firstAttribute="trailing" secondItem="TQf-bS-mUg" secondAttribute="trailing" constant="8" id="akQ-By-D5e"/>
+                <constraint firstItem="6UQ-Gl-vNc" firstAttribute="top" secondItem="M25-Ng-Sbt" secondAttribute="bottom" id="NBv-EM-0ng"/>
+                <constraint firstItem="M25-Ng-Sbt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="X6j-YP-T7a"/>
                 <constraint firstItem="P7L-Wi-JS1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dZE-mj-Q9C"/>
-                <constraint firstItem="TQf-bS-mUg" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="i1q-Gx-EaA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="M25-Ng-Sbt" secondAttribute="trailing" constant="8" id="kcI-Cm-rCA"/>
+                <constraint firstItem="M25-Ng-Sbt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="qL5-1l-rNx"/>
             </constraints>
             <point key="canvasLocation" x="-16.030534351145036" y="-15.492957746478874"/>
         </view>

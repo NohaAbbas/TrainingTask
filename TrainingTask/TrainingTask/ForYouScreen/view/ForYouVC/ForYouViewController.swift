@@ -11,21 +11,34 @@ import UIKit
 class ForYouViewController: UIViewController {
     static let IDENTIFIER = "ForYouViewController"
 
-    @IBOutlet weak var filtersCollectionView: FiltersCollectionView!
+    @IBOutlet weak var filtersContainer: UIView!
     @IBOutlet weak var postsTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var presenter: ForYouViewToPresenterProtocol?
     var posts = [Post]()
     var selectedFilterPosition = 0
+    var filtersCollectionView: FiltersCollectionView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        setupFiltersCollectionView()
         setupPostsTableView()
         presenter?.viewDidLoad()
     }
 
+    private func setupFiltersCollectionView() {
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.estimatedItemSize = CGSize(width: 100, height: 88)
+        layout.scrollDirection = .horizontal
+        
+        filtersCollectionView = FiltersCollectionView(frame: CGRect(x: 0, y: 0, width: filtersContainer.frame.width, height: 88), collectionViewLayout: layout)
+        filtersCollectionView?.showsHorizontalScrollIndicator = false
+        filtersCollectionView?.filtersDelegate = self
+    
+        filtersContainer.addSubview(filtersCollectionView!)
+    }
     
     private func setupPostsTableView() {
         postsTableView.register(UINib(nibName: PostTableViewCell.IDENTIFIER, bundle: nil), forCellReuseIdentifier: PostTableViewCell.IDENTIFIER)
@@ -71,8 +84,7 @@ extension ForYouViewController: ForYouPresenterToViewProtocol {
     }
     
     func showFilters(filters: [String]) {
-        filtersCollectionView.configureWith(array: filters)
-        filtersCollectionView.filtersDelegate = self
+        filtersCollectionView?.configureWith(array: filters)
     }
     
     func showPosts(posts: [Post]) {
