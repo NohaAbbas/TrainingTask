@@ -63,7 +63,7 @@ extension PostDetailsViewController: PostDetailsPresenterToViewProtocol {
         postDate.text = post.formattedDate
         authorNameLabel.text = post.embedded.author[0].name
         authorImage.sd_setImage(with: URL(string: post.embedded.author.first?.avatar.AvatarSize24Url ?? ""))
-        postImage.sd_setImage(with: URL(string: post.embedded.featuredMedia.first?.imageUrl ?? ""))
+        postImage.sd_setImage(with: URL(string: post.embedded.featuredMedia?.first?.imageUrl ?? ""))
         webView.loadHTMLString(headerString + post.content.article, baseURL: nil)
     }
 }

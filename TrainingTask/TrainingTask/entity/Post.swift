@@ -18,6 +18,7 @@ struct Post: Codable {
         date.getDateAsString(from: DateFormat.FULL_DATE_TIME.rawValue,
                              to: DateFormat.MONTH_DAY_YEAR.rawValue)
     }
+    var format: String
     
     enum CodingKeys: String, CodingKey {
         case title
@@ -25,6 +26,7 @@ struct Post: Codable {
         case embedded = "_embedded"
         case categories = "categories_labels"
         case date
+        case format
     }
 }
 
@@ -45,7 +47,7 @@ struct Content: Codable {
 }
 
 struct EmbeddedLinks: Codable {
-    var featuredMedia: [FeaturedMedia]
+    var featuredMedia: [FeaturedMedia]?
     var author: [Author]
 
     enum CodingKeys: String, CodingKey {

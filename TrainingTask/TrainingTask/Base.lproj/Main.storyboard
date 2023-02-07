@@ -4,8 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -38,51 +36,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
-                    <connections>
-                        <segue destination="G8L-Ja-jd9" kind="relationship" relationship="viewControllers" id="qZm-YR-qP8"/>
-                    </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="92U-Pu-LfR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1075.5725190839694" y="-219.01408450704227"/>
         </scene>
-        <!--Videos-->
-        <scene sceneID="4rW-jR-KLA">
-            <objects>
-                <viewController id="G8L-Ja-jd9" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="cLs-aG-pj7">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="aMI-ep-W3W"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Videos" image="video.fill" catalog="system" id="OHf-TF-eNT"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3PL-qM-jqq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2190" y="601"/>
-        </scene>
-        <!--Post Details View Controller-->
-        <scene sceneID="wnf-Wl-af9">
-            <objects>
-                <viewController storyboardIdentifier="PostDetailsViewController" id="8U4-Qx-wmc" customClass="PostDetailsViewController" customModule="TrainingTask" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Rty-99-tlr">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="eDn-NG-nRj"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="WjV-A5-kVH"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="v2y-Qu-nhI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="230" y="1421"/>
-        </scene>
     </scenes>
-    <resources>
-        <image name="video.fill" catalog="system" width="128" height="81"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

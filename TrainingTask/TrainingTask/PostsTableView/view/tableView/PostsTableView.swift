@@ -54,7 +54,6 @@ extension PostsTableView: UITableViewDataSource {
 
 extension PostsTableView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("\(postsArray[indexPath.row].title) selected")
         postsDelegate?.postCellClicked(selectedPostPosition: indexPath.row)
     }
 }
