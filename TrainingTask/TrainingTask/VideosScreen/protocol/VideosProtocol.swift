@@ -27,3 +27,6 @@ protocol VideosInteractorToPresenterProtocol: AnyObject {
     func videosFetchingFailure(error: String)
 }
 
+protocol VideosPresenterToRouterProtocol: AnyObject {
+    func showErrorAlert(error: String)
+}

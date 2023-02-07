@@ -13,7 +13,7 @@ class ApplicationFlow {
         view.viewControllers = [
             PostsRouter.createForYouScreen(with: navigationController),
             QuestionsRouter.createQuestionsScreen(with: navigationController),
-            VideosRouter.createVideosScreen()
+            VideosRouter.createVideosScreen(with: navigationController)
         ]
         return view
     }

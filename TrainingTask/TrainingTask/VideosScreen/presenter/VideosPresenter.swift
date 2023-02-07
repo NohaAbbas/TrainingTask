@@ -12,6 +12,7 @@ class VideosPresenter {
     
     weak var view: VideosPresenterToViewProtocol?
     var interactor: VideosPresenterToInteractorProtocol?
+    var router: VideosPresenterToRouterProtocol?
     
 }
 
@@ -32,5 +33,6 @@ extension VideosPresenter: VideosInteractorToPresenterProtocol {
     
     func videosFetchingFailure(error: String) {
         view?.showError()
+        router?.showErrorAlert(error: error)
     }
 }

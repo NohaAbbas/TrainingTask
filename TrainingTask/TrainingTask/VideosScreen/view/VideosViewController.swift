@@ -51,7 +51,8 @@ extension VideosViewController: VideosPresenterToViewProtocol {
     }
     
     func showError() {
-        hideVideosTable()
+        activityIndicator.isHidden = true
+        activityIndicator.stopAnimating()
     }
     
     func hideTable() {
