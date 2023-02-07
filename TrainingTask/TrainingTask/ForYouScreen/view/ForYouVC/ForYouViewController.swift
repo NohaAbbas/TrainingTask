@@ -30,6 +30,11 @@ class ForYouViewController: UIViewController {
         presenter?.viewDidLoad()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 23/255, green: 200/255, blue: 180/255, alpha: 1)
+    }
+    
     private func setupFiltersCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: 100, height: 88)

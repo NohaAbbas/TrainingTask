@@ -27,6 +27,11 @@ class QuestionsViewController: UIViewController {
         presenter?.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 213/255, green: 12/255, blue: 66/255, alpha: 1)
+    }
+    
     private func setupFiltersCollectionView() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.estimatedItemSize = CGSize(width: 100, height: 88)

@@ -25,6 +25,11 @@ class VideosViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.tintColor = UIColor(red: 85/255, green: 113/255, blue: 156/255, alpha: 1)
+    }
+    
     private func setupVideosTable() {
         videosTableView = PostsTableView(frame: CGRect(x: 0, y: 0, width: videosContainer.bounds.width, height: videosContainer.bounds.height), style: .plain)
         
