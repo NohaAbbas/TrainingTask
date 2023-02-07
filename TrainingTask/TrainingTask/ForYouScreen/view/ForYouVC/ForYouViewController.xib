@@ -33,7 +33,7 @@
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                 </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDg-ba-i74" userLabel="Posts Container">
-                    <rect key="frame" x="0.0" y="188" width="393" height="622"/>
+                    <rect key="frame" x="0.0" y="188" width="393" height="646"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </view>
             </subviews>
@@ -48,7 +48,7 @@
                 <constraint firstItem="qRd-6y-u4p" firstAttribute="centerY" secondItem="SLp-Te-qIG" secondAttribute="centerY" id="fCV-wm-ddG"/>
                 <constraint firstItem="aqt-tl-hry" firstAttribute="leading" secondItem="0Px-Mh-MdA" secondAttribute="leading" constant="8" id="ji4-Rw-CEl"/>
                 <constraint firstItem="MDg-ba-i74" firstAttribute="leading" secondItem="0Px-Mh-MdA" secondAttribute="leading" id="med-9c-mAf"/>
-                <constraint firstItem="0Px-Mh-MdA" firstAttribute="bottom" secondItem="MDg-ba-i74" secondAttribute="bottom" constant="8" id="qp5-Xs-c9V"/>
+                <constraint firstAttribute="bottom" secondItem="MDg-ba-i74" secondAttribute="bottom" constant="18" id="qp5-Xs-c9V"/>
             </constraints>
             <point key="canvasLocation" x="-329" y="-52"/>
         </view>

@@ -43,8 +43,8 @@ class ForYouViewController: UIViewController {
     }
     
     private func setupPostsTableView() {
-        let tabBarHeight = tabBarController?.tabBar.frame.size.height
-        postsTableView = PostsTableView(frame: CGRect(x: 0, y: 0, width: postsContainer.frame.width, height: postsContainer.frame.height - (tabBarHeight ?? 0)), style: .plain)
+        //let tabBarHeight = tabBarController?.tabBar.frame.size.height
+        postsTableView = PostsTableView(frame: CGRect(x: 0, y: 0, width: postsContainer.frame.width, height: postsContainer.frame.height), style: .plain)
         postsTableView?.postsDelegate = self
         postsContainer.addSubview(postsTableView!)
     }

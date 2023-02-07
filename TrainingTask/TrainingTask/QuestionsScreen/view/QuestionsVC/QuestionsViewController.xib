@@ -33,7 +33,7 @@
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                 </activityIndicatorView>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="6UQ-Gl-vNc">
-                    <rect key="frame" x="8" y="188" width="377" height="622"/>
+                    <rect key="frame" x="8" y="188" width="377" height="646"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DCh-Eq-kYq">
                         <size key="itemSize" width="100" height="128"/>
@@ -49,7 +49,7 @@
                 <constraint firstItem="P7L-Wi-JS1" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8Yo-QD-c8Q"/>
                 <constraint firstItem="6UQ-Gl-vNc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="AO9-wr-mm2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="6UQ-Gl-vNc" secondAttribute="trailing" constant="8" id="CRk-hA-4hH"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6UQ-Gl-vNc" secondAttribute="bottom" constant="8" id="IwU-2I-rOS"/>
+                <constraint firstAttribute="bottom" secondItem="6UQ-Gl-vNc" secondAttribute="bottom" constant="18" id="IwU-2I-rOS"/>
                 <constraint firstItem="6UQ-Gl-vNc" firstAttribute="top" secondItem="M25-Ng-Sbt" secondAttribute="bottom" id="NBv-EM-0ng"/>
                 <constraint firstItem="M25-Ng-Sbt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="X6j-YP-T7a"/>
                 <constraint firstItem="P7L-Wi-JS1" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="dZE-mj-Q9C"/>
