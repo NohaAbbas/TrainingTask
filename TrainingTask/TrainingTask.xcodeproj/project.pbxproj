@@ -55,6 +55,8 @@
 		BB6F3D7F298FE5B3008D73D6 /* UserDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3D7E298FE5B3008D73D6 /* UserDetailsPresenter.swift */; };
 		BB6F3D82298FE607008D73D6 /* UserDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6F3D81298FE607008D73D6 /* UserDetailsProtocol.swift */; };
 		BB707195298131E2009EDCCD /* ForYouViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB707194298131E2009EDCCD /* ForYouViewController.swift */; };
+		BB89E9E02991650F009C393E /* PostsTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89E9DF2991650F009C393E /* PostsTableView.swift */; };
+		BB89E9E429916D16009C393E /* PostTableViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB89E9E329916D16009C393E /* PostTableViewProtocol.swift */; };
 		BB8EA54D29893C16001454AA /* NavBarProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB8EA54C29893C16001454AA /* NavBarProtocol.swift */; };
 		BBDF9F0D297FFCCE00BEF26B /* CustomNavigationBar.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */; };
 		BBDF9F0F297FFD1E00BEF26B /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */; };
@@ -139,6 +141,8 @@
 		BB6F3D7E298FE5B3008D73D6 /* UserDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsPresenter.swift; sourceTree = "<group>"; };
 		BB6F3D81298FE607008D73D6 /* UserDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsProtocol.swift; sourceTree = "<group>"; };
 		BB707194298131E2009EDCCD /* ForYouViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForYouViewController.swift; sourceTree = "<group>"; };
+		BB89E9DF2991650F009C393E /* PostsTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsTableView.swift; sourceTree = "<group>"; };
+		BB89E9E329916D16009C393E /* PostTableViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewProtocol.swift; sourceTree = "<group>"; };
 		BB8EA54C29893C16001454AA /* NavBarProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBarProtocol.swift; sourceTree = "<group>"; };
 		BBDF9F0C297FFCCE00BEF26B /* CustomNavigationBar.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomNavigationBar.xib; sourceTree = "<group>"; };
 		BBDF9F0E297FFD1E00BEF26B /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -247,7 +251,6 @@
 			isa = PBXGroup;
 			children = (
 				BB678F6F29891A6F0017D0DF /* ForYouVC */,
-				BB06F9FC29815E5700E6EABC /* postTableViewCell */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -406,6 +409,7 @@
 				BBE38BD42986CF7F0008E81A /* ApplicationFlow.swift */,
 				BB678F7C29892B070017D0DF /* NavigationBar */,
 				BBC703F3298BE496002CF1AA /* FiltersCollectionView */,
+				BB89E9DD299164CE009C393E /* PostsTableView */,
 				BBE38BD22986B7550008E81A /* ForYouScreen */,
 				BBE38BD32986B7660008E81A /* PostDetailsScreen */,
 				BB6941B9298A560300CDAE72 /* QuestionsScreen */,
@@ -576,6 +580,40 @@
 			isa = PBXGroup;
 			children = (
 				BB6F3D81298FE607008D73D6 /* UserDetailsProtocol.swift */,
+			);
+			path = protocol;
+			sourceTree = "<group>";
+		};
+		BB89E9DD299164CE009C393E /* PostsTableView */ = {
+			isa = PBXGroup;
+			children = (
+				BB89E9DE299164E4009C393E /* view */,
+				BB89E9E2299167E1009C393E /* protocol */,
+			);
+			path = PostsTableView;
+			sourceTree = "<group>";
+		};
+		BB89E9DE299164E4009C393E /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BB89E9E12991654E009C393E /* tableView */,
+				BB06F9FC29815E5700E6EABC /* postTableViewCell */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BB89E9E12991654E009C393E /* tableView */ = {
+			isa = PBXGroup;
+			children = (
+				BB89E9DF2991650F009C393E /* PostsTableView.swift */,
+			);
+			path = tableView;
+			sourceTree = "<group>";
+		};
+		BB89E9E2299167E1009C393E /* protocol */ = {
+			isa = PBXGroup;
+			children = (
+				BB89E9E329916D16009C393E /* PostTableViewProtocol.swift */,
 			);
 			path = protocol;
 			sourceTree = "<group>";
@@ -894,7 +932,9 @@
 				BB65C1112987ED4A00246226 /* PostDetailsRouter.swift in Sources */,
 				BB684727297FE32900145344 /* AppDelegate.swift in Sources */,
 				BB6F3D7C298FE499008D73D6 /* UserDetailsRouter.swift in Sources */,
+				BB89E9E02991650F009C393E /* PostsTableView.swift in Sources */,
 				BBFF235B2980329D0094E724 /* FiltersCollectionViewCell.swift in Sources */,
+				BB89E9E429916D16009C393E /* PostTableViewProtocol.swift in Sources */,
 				BB06FA0C29816FEC00E6EABC /* PostsPresenter.swift in Sources */,
 				BB664581298F9D9D000FFF81 /* UIHelper.swift in Sources */,
 				BB06F9FF29815E8A00E6EABC /* PostTableViewCell.swift in Sources */,

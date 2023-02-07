@@ -12,13 +12,15 @@ class ForYouViewController: UIViewController {
     static let IDENTIFIER = "ForYouViewController"
 
     @IBOutlet weak var filtersContainer: UIView!
-    @IBOutlet weak var postsTableView: UITableView!
+    @IBOutlet weak var postsContainer: UIView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var presenter: ForYouViewToPresenterProtocol?
     var posts = [Post]()
     var selectedFilterPosition = 0
+    
     var filtersCollectionView: FiltersCollectionView?
+    var postsTableView: PostsTableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,39 +43,22 @@ class ForYouViewController: UIViewController {
     }
     
     private func setupPostsTableView() {
-        postsTableView.register(UINib(nibName: PostTableViewCell.IDENTIFIER, bundle: nil), forCellReuseIdentifier: PostTableViewCell.IDENTIFIER)
-        postsTableView.dataSource = self
-        postsTableView.delegate = self
+        let tabBarHeight = tabBarController?.tabBar.frame.size.height
+        postsTableView = PostsTableView(frame: CGRect(x: 0, y: 0, width: postsContainer.frame.width, height: postsContainer.frame.height - (tabBarHeight ?? 0)), style: .plain)
+        postsTableView?.postsDelegate = self
+        postsContainer.addSubview(postsTableView!)
     }
     
     private func hideTableView() {
-        postsTableView.isHidden = true
+        postsContainer.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
     
     private func showTableView() {
-        postsTableView.isHidden = false
+        postsContainer.isHidden = false
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
-        postsTableView.reloadData()
-        postsTableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-    }
-}
-
-extension ForYouViewController: UITableViewDataSource, UITableViewDelegate {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        posts.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.IDENTIFIER, for: indexPath) as! PostTableViewCell
-        cell.setup(with: posts[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenter?.showPostDetailsViewController(postAt: indexPath.row, filter: selectedFilterPosition)
     }
     
 }
@@ -89,6 +74,7 @@ extension ForYouViewController: ForYouPresenterToViewProtocol {
     
     func showPosts(posts: [Post]) {
         self.posts = posts
+        postsTableView?.configureWith(array: posts)
         showTableView()
     }
     
@@ -105,3 +91,10 @@ extension ForYouViewController: FiltersCollectionViewProtocol {
     }
 }
 
+extension ForYouViewController: PostTableViewProtocol {
+    
+    func postCellClicked(selectedPostPosition: Int) {
+        presenter?.showPostDetailsViewController(postAt: selectedPostPosition, filter: selectedFilterPosition)
+    }
+    
+}
