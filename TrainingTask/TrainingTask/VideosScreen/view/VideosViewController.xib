@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideosViewController" customModule="TrainingTask" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="fOv-gI-uSz" id="Q0F-Fp-sH6"/>
+                <outlet property="videosContainer" destination="dQC-c7-z1Q" id="mxg-tX-ngb"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fOv-gI-uSz">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQC-c7-z1Q" userLabel="Videos Container">
+                    <rect key="frame" x="8" y="112" width="377" height="722"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fOv-gI-uSz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ekz-Lt-COU"/>
+                <constraint firstItem="dQC-c7-z1Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="JcL-Nt-Iq2"/>
+                <constraint firstItem="fOv-gI-uSz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NPg-wQ-wkC"/>
+                <constraint firstItem="dQC-c7-z1Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="112" id="e1W-wn-0aN"/>
+                <constraint firstAttribute="bottom" secondItem="dQC-c7-z1Q" secondAttribute="bottom" constant="18" id="eUp-5m-EEy"/>
+                <constraint firstItem="dQC-c7-z1Q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-8" id="gWS-jr-OdX"/>
+            </constraints>
+            <point key="canvasLocation" x="-22.137404580152669" y="-11.267605633802818"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
