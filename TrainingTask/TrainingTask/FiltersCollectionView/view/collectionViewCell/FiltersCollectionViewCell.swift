@@ -21,6 +21,7 @@ class FiltersCollectionViewCell: UICollectionViewCell {
     
     func setup(with filter: String, at position: Int, lastSelected: Int) {
         filterLabel.text = filter
+        filterLabel.textColor = UIColor.darkGray
         filterLabel.sizeToFit()
         filterView.layer.masksToBounds = false
         filterView.layer.cornerRadius = 4

@@ -33,7 +33,17 @@ extension UserDetailsViewController: UserDetailsPresenterToViewProtocol {
         userImage.sd_setImage(with: URL(string: user.imageUrl.avatarSize96Url))
         userNameLabel.text = user.name
         userDescriptionLabel.text = user.description
-        askUserButton.setTitle("Ask \(user.name)", for: .normal)
+        
+        let fontAttribute = [ NSAttributedString.Key.font: UIFont(name: "Gotham-Medium", size: 13)! ]
+
+        askUserButton.setAttributedTitle(NSAttributedString(string: "Ask \(user.name)", attributes: fontAttribute), for: .normal)
+        
+        
+        if #available(iOS 15.0, *) {
+            askUserButton.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 30, bottom: 12, trailing: 30)
+        } else {
+            askUserButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 30, bottom: 12, right: 30)
+        }
     }
     
 }

@@ -29,10 +29,13 @@ class PostTableViewCell: UITableViewCell {
         var imageLink = ""
         if post.format == "video" {
             var videoLinkName = post.content.article.slice(from: "https://www.youtube.com/watch?v=", to: "&")
+            
             if videoLinkName?.isEmpty ?? true {
                 videoLinkName = post.content.article.slice(from: "https://youtu.be/", to: "&")
             }
+            
             imageLink = "https://img.youtube.com/vi/\(videoLinkName ?? "")/hqdefault.jpg"
+            
         } else {
             imageLink = post.embedded.featuredMedia?[0].imageUrl ?? ""
         }
@@ -42,11 +45,11 @@ class PostTableViewCell: UITableViewCell {
     private func setTitleLabelStyle(post: Post) {
         if post.format == "video" {
             postTitle.textColor = UIColor(red: 82/255, green: 95/255, blue: 132/255, alpha: 1)
-            postTitle.font = .systemFont(ofSize: 15, weight: .medium)
+            postTitle.font = UIFont(name: "Gotham-Medium", size: 14)
             
         } else {
             postTitle.textColor = .darkGray
-            postTitle.font = .boldSystemFont(ofSize: 17)
+            postTitle.font = UIFont(name: "Gotham-Bold", size: 15)
         }
     }
 }
