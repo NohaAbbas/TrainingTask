@@ -22,6 +22,11 @@ class QuestionsPresenter {
         }
     }
     
+    private func prepareFiltersList() {
+        let filters = Filters.allCases.map {$0.description}
+        view?.showFilters(filters: filters)
+    }
+    
 }
 
 extension QuestionsPresenter: QuestionsViewToPresenterProtocol {
@@ -31,11 +36,6 @@ extension QuestionsPresenter: QuestionsViewToPresenterProtocol {
         prepareFiltersList()
     }
     
-    func prepareFiltersList() {
-        let filters = Filters.allCases.map {$0.description}
-        view?.showFilters(filters: filters)
-    }
-    
     func startFetchingUsers(of category: Int) {
         if !filteredUsers[category].users.isEmpty {
             view?.showUsers(users: filteredUsers[category].users)
@@ -43,10 +43,6 @@ extension QuestionsPresenter: QuestionsViewToPresenterProtocol {
         }
         view?.hideCollectionView()
         interactor?.fetchUsers(of: filtersIDs[category], at: category)
-    }
-    
-    func showAlert(error: String) {
-        router?.showAlert(error: error)
     }
     
     func showUserDetailsScreen(userAt userPosition: Int, withFilter filterPosition: Int) {
@@ -62,8 +58,8 @@ extension QuestionsPresenter: QuestionsInteractorToPresenterProtocol {
     }
     
     func usersFetchingFailed(error: String) {
-        view?.showError()
-        showAlert(error: error)
+        view?.hideLoading()
+        router?.showAlert(error: error)
     }
     
 }

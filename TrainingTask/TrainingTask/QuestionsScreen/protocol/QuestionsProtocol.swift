@@ -9,9 +9,7 @@ import Foundation
 
 protocol QuestionsViewToPresenterProtocol : AnyObject {
     func viewDidLoad()
-    func prepareFiltersList()
     func startFetchingUsers(of category: Int)
-    func showAlert(error: String)
     func showUserDetailsScreen(userAt userPosition: Int, withFilter filterPosition: Int)
 }
 
@@ -19,7 +17,7 @@ protocol QuestionsPresenterToViewProtocol: AnyObject {
     func hideCollectionView()
     func showFilters(filters: [String])
     func showUsers(users: [User])
-    func showError()
+    func hideLoading()
 }
 
 protocol QuestionsPresenterToInteractorProtocol: AnyObject {

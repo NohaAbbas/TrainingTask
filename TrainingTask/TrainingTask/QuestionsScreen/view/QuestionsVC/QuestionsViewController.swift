@@ -108,7 +108,7 @@ extension QuestionsViewController: QuestionsPresenterToViewProtocol {
         showUsersCollectionView()
     }
     
-    func showError() {
+    func hideLoading() {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }
