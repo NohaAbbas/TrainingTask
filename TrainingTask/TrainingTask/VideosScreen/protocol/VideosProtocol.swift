@@ -14,7 +14,7 @@ protocol VideosViewToPresenterProtocol: AnyObject {
 
 protocol VideosPresenterToViewProtocol: AnyObject {
     func showVideos(videos: [Post])
-    func showError()
+    func hideLoading()
     func hideTable()
 }
 

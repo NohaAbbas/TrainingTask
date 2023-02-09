@@ -32,7 +32,7 @@ extension VideosPresenter: VideosInteractorToPresenterProtocol {
     }
     
     func videosFetchingFailure(error: String) {
-        view?.showError()
+        view?.hideLoading()
         router?.showErrorAlert(error: error)
     }
 }
