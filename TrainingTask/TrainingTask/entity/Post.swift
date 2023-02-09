@@ -19,6 +19,21 @@ struct Post: Codable {
                              to: DateFormat.MONTH_DAY_YEAR.rawValue)
     }
     var format: String
+    var videoImageLink: String? {
+        var link = ""
+        if format == "video" {
+            var videoLinkName = content.article.slice(from: "https://www.youtube.com/watch?v=", to: "&")
+            
+            if videoLinkName?.isEmpty ?? true {
+                videoLinkName = content.article.slice(from: "https://youtu.be/", to: "&")
+            }
+            link = "https://img.youtube.com/vi/\(videoLinkName ?? "")/hqdefault.jpg"
+        } else {
+            link = embedded.featuredMedia?[0].imageUrl ?? ""
+        }
+        
+        return link
+    }
     
     enum CodingKeys: String, CodingKey {
         case title

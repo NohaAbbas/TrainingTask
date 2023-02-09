@@ -19,27 +19,10 @@ class PostTableViewCell: UITableViewCell {
     }
     
     func setup(with post: Post) {
-        let imageLink = getImageLink(post: post)
+        let imageLink = post.videoImageLink
         setTitleLabelStyle(post: post)
         postTitle.text = post.title.titleString
-        postImage.sd_setImage(with: URL(string: imageLink))
-    }
-    
-    private func getImageLink(post: Post) -> String {
-        var imageLink = ""
-        if post.format == "video" {
-            var videoLinkName = post.content.article.slice(from: "https://www.youtube.com/watch?v=", to: "&")
-            
-            if videoLinkName?.isEmpty ?? true {
-                videoLinkName = post.content.article.slice(from: "https://youtu.be/", to: "&")
-            }
-            
-            imageLink = "https://img.youtube.com/vi/\(videoLinkName ?? "")/hqdefault.jpg"
-            
-        } else {
-            imageLink = post.embedded.featuredMedia?[0].imageUrl ?? ""
-        }
-        return imageLink
+        postImage.sd_setImage(with: URL(string: imageLink ?? ""))
     }
     
     private func setTitleLabelStyle(post: Post) {
