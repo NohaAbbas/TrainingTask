@@ -15,7 +15,7 @@ class UserDetailsViewController: UIViewController {
     @IBOutlet weak var userImage: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userDescriptionLabel: UILabel!
-    @IBOutlet weak var askUserButton: UIButton!
+    @IBOutlet weak var askUserButtonTitle: UILabel!
     
     var presenter: UserDetailsViewToPresenterProtocol?
     
@@ -36,14 +36,7 @@ extension UserDetailsViewController: UserDetailsPresenterToViewProtocol {
         
         let fontAttribute = [ NSAttributedString.Key.font: UIFont(name: "Gotham-Medium", size: 13)! ]
 
-        askUserButton.setAttributedTitle(NSAttributedString(string: "Ask \(user.name)", attributes: fontAttribute), for: .normal)
-        
-        
-        if #available(iOS 15.0, *) {
-            askUserButton.configuration?.contentInsets = NSDirectionalEdgeInsets(top: 12, leading: 30, bottom: 12, trailing: 30)
-        } else {
-            askUserButton.contentEdgeInsets = UIEdgeInsets(top: 12, left: 30, bottom: 12, right: 30)
-        }
+        askUserButtonTitle.attributedText = NSAttributedString(string: "Ask \(user.name)", attributes: fontAttribute)
     }
     
 }
