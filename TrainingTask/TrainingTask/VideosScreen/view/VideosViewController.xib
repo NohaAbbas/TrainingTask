@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="VideosViewController" customModule="TrainingTask" customModuleProvider="target">
             <connections>
                 <outlet property="activityIndicator" destination="fOv-gI-uSz" id="Q0F-Fp-sH6"/>
-                <outlet property="videosContainer" destination="dQC-c7-z1Q" id="mxg-tX-ngb"/>
+                <outlet property="videosTableView" destination="tWN-kB-jrU" id="Ddj-tr-SIo"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,20 +24,20 @@
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="fOv-gI-uSz">
                     <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                 </activityIndicatorView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dQC-c7-z1Q" userLabel="Videos Container">
-                    <rect key="frame" x="8" y="112" width="377" height="722"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tWN-kB-jrU">
+                    <rect key="frame" x="8" y="100" width="377" height="734"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </view>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fOv-gI-uSz" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ekz-Lt-COU"/>
-                <constraint firstItem="dQC-c7-z1Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="JcL-Nt-Iq2"/>
                 <constraint firstItem="fOv-gI-uSz" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="NPg-wQ-wkC"/>
-                <constraint firstItem="dQC-c7-z1Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="112" id="e1W-wn-0aN"/>
-                <constraint firstAttribute="bottom" secondItem="dQC-c7-z1Q" secondAttribute="bottom" constant="18" id="eUp-5m-EEy"/>
-                <constraint firstItem="dQC-c7-z1Q" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-8" id="gWS-jr-OdX"/>
+                <constraint firstItem="tWN-kB-jrU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="foc-01-cNv"/>
+                <constraint firstAttribute="bottom" secondItem="tWN-kB-jrU" secondAttribute="bottom" constant="18" id="hV4-Pc-H6P"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tWN-kB-jrU" secondAttribute="trailing" constant="8" id="m4A-Ec-yhi"/>
+                <constraint firstItem="tWN-kB-jrU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="t4j-pe-k1k"/>
             </constraints>
             <point key="canvasLocation" x="-22.137404580152669" y="-11.267605633802818"/>
         </view>

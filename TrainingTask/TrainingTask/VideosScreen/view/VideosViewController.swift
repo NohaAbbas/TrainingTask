@@ -11,11 +11,11 @@ class VideosViewController: UIViewController {
     
     static let IDENTIFIER = "VideosViewController"
     
-    @IBOutlet weak var videosContainer: UIView!
+    @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var videosTableView: PostsTableView?
     var presenter: VideosViewToPresenterProtocol?
+    var videos = [Post]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,19 +31,19 @@ class VideosViewController: UIViewController {
     }
     
     private func setupVideosTable() {
-        videosTableView = PostsTableView(frame: CGRect(x: 0, y: 0, width: videosContainer.bounds.width, height: videosContainer.bounds.height), style: .plain)
-        
-        videosContainer.addSubview(videosTableView!)
+        videosTableView.register(UINib(nibName: PostTableViewCell.IDENTIFIER, bundle: nil), forCellReuseIdentifier: PostTableViewCell.IDENTIFIER)
+        videosTableView.dataSource = self
     }
     
     private func showVideosTable() {
-        videosContainer.isHidden = false
+        videosTableView.reloadData()
+        videosTableView.isHidden = false
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }
     
     private func hideVideosTable() {
-        videosContainer.isHidden = true
+        videosTableView.isHidden = true
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
     }
@@ -51,7 +51,7 @@ class VideosViewController: UIViewController {
 
 extension VideosViewController: VideosPresenterToViewProtocol {
     func showVideos(videos: [Post]) {
-        videosTableView?.configureWith(array: videos)
+        self.videos = videos
         showVideosTable()
     }
     
@@ -64,4 +64,18 @@ extension VideosViewController: VideosPresenterToViewProtocol {
         hideVideosTable()
     }
     
+}
+
+extension VideosViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return videos.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PostTableViewCell.IDENTIFIER, for: indexPath) as! PostTableViewCell
+        cell.setup(with: videos[indexPath.row])
+        return cell
+    }
+
 }
