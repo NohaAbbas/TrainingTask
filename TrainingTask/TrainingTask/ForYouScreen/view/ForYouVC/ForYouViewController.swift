@@ -83,7 +83,7 @@ extension ForYouViewController: ForYouPresenterToViewProtocol {
         showTableView()
     }
     
-    func showError() {
+    func hideLoading() {
         activityIndicator.isHidden = true
         activityIndicator.stopAnimating()
     }

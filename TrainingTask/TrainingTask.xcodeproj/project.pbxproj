@@ -267,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				BB678F6F29891A6F0017D0DF /* ForYouVC */,
-				BB06F9FC29815E5700E6EABC /* PostsTableViewCell */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -398,6 +397,14 @@
 			path = router;
 			sourceTree = "<group>";
 		};
+		BB6820752994EB5400E6CD6C /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				BB06F9FC29815E5700E6EABC /* PostsTableViewCell */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		BB68471A297FE32900145344 = {
 			isa = PBXGroup;
 			children = (
@@ -431,6 +438,7 @@
 				BB6941B9298A560300CDAE72 /* QuestionsScreen */,
 				BB6F3D74298FE201008D73D6 /* UserDetailsScreen */,
 				BB6B040D29923F8100AAD39C /* VideosScreen */,
+				BB6820752994EB5400E6CD6C /* CustomView */,
 				BB684757297FE61C00145344 /* entity */,
 				BB06F9F7298158B700E6EABC /* utils */,
 				BB6B042A2992AA0500AAD39C /* fonts */,

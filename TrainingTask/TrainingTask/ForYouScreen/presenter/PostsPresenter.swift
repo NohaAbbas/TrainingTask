@@ -23,6 +23,11 @@ class PostsPresenter {
         }
     }
     
+    private func prepareFiltersList() {
+        let filters = Filters.allCases.map {$0.description}
+        view?.showFilters(filters: filters)
+    }
+    
 }
 
 extension PostsPresenter: ForYouViewToPresenterProtocol {
@@ -30,11 +35,7 @@ extension PostsPresenter: ForYouViewToPresenterProtocol {
         startFetchingPosts(atPosition: Filters.ALL.rawValue)
         prepareFiltersList()
     }
-    
-    func prepareFiltersList() {
-        let filters = Filters.allCases.map {$0.description}
-        view?.showFilters(filters: filters)
-    }
+
     
     func startFetchingPosts(atPosition position: Int) {
         if !filteredPostsList[position].posts.isEmpty {
@@ -42,21 +43,14 @@ extension PostsPresenter: ForYouViewToPresenterProtocol {
             return
         }
         
-        hidePostsTable()
+        view?.hidePostsTable()
         interactor?.fetchPosts(of: filtersIDs[position], filter: position)
     }
     
     func showPostDetailsViewController(postAt postPosition: Int, filter filterPosition: Int) {
         router?.navigateToPostDetailsScreen(post: filteredPostsList[filterPosition].posts[postPosition])
     }
-    
-    func hidePostsTable() {
-        view?.hidePostsTable()
-    }
-    
-    func showAlert(error: String) {
-        router?.showAlertWithErrorMessage(error: error)
-    }
+
 }
 
 extension PostsPresenter: ForYouInteractorToPresenterProtocol {
@@ -67,8 +61,8 @@ extension PostsPresenter: ForYouInteractorToPresenterProtocol {
     }
     
     func postsFetchingFailure(error: String) {
-        view?.showError()
-        showAlert(error: error)
+        view?.hideLoading()
+        router?.showAlertWithErrorMessage(error: error)
     }
     
 }
